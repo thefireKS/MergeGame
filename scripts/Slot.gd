@@ -10,6 +10,7 @@ var EmptyStyle : StyleBoxTexture = preload("res://styles/MergeGameFieldEmptyStyl
 var item: Item = null
 
 func _ready():
+	randomize()
 	if randi() % 2 == 0 :
 		item = ItemObject.instance()
 		add_child(item)

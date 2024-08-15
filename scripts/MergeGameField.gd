@@ -11,7 +11,32 @@ func _ready():
 #		game_slot.connect("focus_exited", self, "slot_gui_input", [game_slot])
 	pass
 
-#func _process(delta):
+func save_field_json():
+	var slot_list : String = " " 
+	for game_slot in game_slots.get_children():
+		print(game_slot.item.item_data)
+		var slot := {
+			"item_data":{
+				"item_data": game_slot.item
+#				"name": game_slot.item.name,
+#				"sprite": "res://"
+			}  
+		}
+		slot_list += str(slot)
+	print("---------------------------------")
+	var save_path := "res://test_file.json"
+	var json_string := slot_list.json_escape()
+	
+	#saving file
+	var file := File.new()
+	file.open(save_path,File.WRITE)
+	file.store_string(json_string)
+	file.close()
+
+func _process(delta):
+	if Input.is_key_pressed(KEY_SPACE):
+		save_field_json()
+		print("File Saved!")
 #	if mouse_left_down and holding_item != null:
 #		holding_item.global_position = get_global_mouse_position()
 
