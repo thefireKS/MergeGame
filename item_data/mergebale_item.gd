@@ -27,6 +27,7 @@ func  get_sprite() -> Texture:
 func updgrade_tier() -> bool:
 	if tier < 5:
 		tier += 1
+		print("{item_name}'s tier increased to {tier}".format({"item_name": name, "tier": str(tier)}))
 		return true
 	else:
 		return false

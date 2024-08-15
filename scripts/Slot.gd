@@ -1,14 +1,17 @@
 extends Panel
+class_name SlotClass
+
+export var ItemObject: PackedScene
+export var ItemDragPreview: PackedScene
 
 var FilledStyle : StyleBoxTexture = preload("res://styles/MergeGameFieldFilledStyle.tres")
 var EmptyStyle : StyleBoxTexture = preload("res://styles/MergeGameFieldEmptyStyle.tres") 
 
-var ItemClass = preload("res://scenes/Item.tscn")
-var item = null
+var item: Item = null
 
 func _ready():
 	if randi() % 2 == 0 :
-		item = ItemClass.instance()
+		item = ItemObject.instance()
 		add_child(item)
 	refresh_style()
 
@@ -18,20 +21,83 @@ func refresh_style():
 	else:
 		set('custom_styles/panel', FilledStyle)
 
-func pick_from_slot():
+func refresh_tier():
+	if item != null:
+		item.refresh()
+
+# When you drag from one slot to another, this gets called. 
+# This is where we add our preview too
+# Godot provides this.
+func get_drag_data(position: Vector2):
+	var data = {}
+	
+	data["item"] = item
+	
+	# Set Drag Preview
+	if item != null:
+		var preview: TextureRect = ItemDragPreview.instance()
+		preview.texture = item.texture
+		set_drag_preview(preview)
+
+	return data
+
+# This is a conditional function that tells UI elements if they can drop based on conditions
+# For now, we check against if item in data dictionary is not null
+# Godot provides this.
+func can_drop_data(position: Vector2, data) -> bool:
+	if data["item"] != null:
+		return true
+	return false
+
+# This is actual logic of swapping of slots and where to put all logics. You can
+# call functions here or manipulate whatever you like
+# Godot provides this.
+func drop_data(position: Vector2, data) -> void:
+	var dropped_item: Item = data["item"]
+	var dropped_item_parent: SlotClass = dropped_item.get_parent() # The Slot
+	# Check if item is null or not, if it's not null then
+	if item != null:
+		# We check if both items are equal, if it's same then
+		if dropped_item.item_data == item.item_data:
+			# Upgrade the tier
+			item.item_data.updgrade_tier()
+			# Remove the child from the the slot it dropped on this one and reset it.
+			dropped_item_parent.reset()
+		# If it's not same, swap it or place it.
+		else:
+			# Remove the current slot's item
+			remove_child(item)
+			# Remove the dropped slot's item
+			dropped_item_parent.remove_child(dropped_item)
+			# Add the current slot's item that we removed on line 55
+			dropped_item_parent.add_child(item)
+			# Set the dropped slot to current slot's item
+			dropped_item_parent.item = item
+			# Add the dropped slot's item to current slot
+			add_child(dropped_item)
+			# Set the current slot to dropped slot's item
+			item = dropped_item
+	# If current slot's item is null, then
+	else:
+		# Reset dropped slot's item and remove it.
+		dropped_item_parent.reset()
+		# Add the dropped slot's removed item to current slot
+		add_child(dropped_item)
+		# Set it
+		item = dropped_item
+	
+	# Refresh the styles
+	dropped_item_parent.refresh_style()
+	refresh_style()
+	
+	# Refresh the tier
+	dropped_item_parent.refresh_tier()
+	refresh_tier()
+
+# This is just repeated above in logic, so made it into function.
+func reset() -> void:
 	remove_child(item)
-	var inventoryNode = find_parent("MergeGameField")
-	inventoryNode.add_child(item)
 	item = null
-	refresh_style()
-
-func put_to_slot(new_item):
-	item = new_item
-	item.position = Vector2(0,0)
-	var inventoryNode = find_parent("MergeGameField")
-	inventoryNode.remove_child(item)
-	add_child(item)
-	refresh_style()
-
-func get_slot_item() -> Item:
-	return item
+#
+#func get_slot_item() -> Item:
+#	return item
