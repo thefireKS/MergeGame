@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "mergebale_item",
 "language": "GDScript",
-"path": "res://item_data/mergebale_item.gd"
+"path": "res://item_data/MergeableItemData.gd"
 } ]
 _global_script_class_icons={
 "Item": "",

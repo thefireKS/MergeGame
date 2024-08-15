@@ -1,5 +1,5 @@
 extends Resource
-class_name mergebale_item
+class_name MergeableItemData
 
 export var name : String
 #export var tier1_sprite : Texture
