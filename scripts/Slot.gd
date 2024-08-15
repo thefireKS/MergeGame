@@ -55,6 +55,9 @@ func can_drop_data(position: Vector2, data) -> bool:
 func drop_data(position: Vector2, data) -> void:
 	var dropped_item: Item = data["item"]
 	var dropped_item_parent: SlotClass = dropped_item.get_parent() # The Slot
+	if dropped_item_parent == self:
+		return
+	
 	# Check if item is null or not, if it's not null then
 	if item != null:
 		# We check if both items are equal, if it's same then
