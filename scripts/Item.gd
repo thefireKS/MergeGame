@@ -8,8 +8,7 @@ func _ready():
 		item_data = load("res://items/test_item_1.tres")
 	else:
 		item_data = load("res://items/test_item_2.tres")
-	# I don't think you need to do this?
-#	item_data.resource_local_to_scene = true
+	item_data.resource_local_to_scene = true
 	
 	texture = item_data.get_sprite()
 	refresh()
