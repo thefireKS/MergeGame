@@ -9,10 +9,5 @@
 
 [resource]
 script = ExtResource( 1 )
-tier = 1
-name = "TestItem1"
-tier1_sprite = ExtResource( 2 )
-tier2_sprite = ExtResource( 3 )
-tier3_sprite = ExtResource( 4 )
-tier4_sprite = ExtResource( 6 )
-tier5_sprite = ExtResource( 5 )
+name = ""
+sprites = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
