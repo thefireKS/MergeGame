@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/ItemDragPreview.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Slot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://styles/MergeGameFieldFilledStyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://scenes/ItemGenerator.tscn" type="PackedScene" id=5]
 
 [node name="Slot" type="Panel"]
 margin_right = 64.0
@@ -12,4 +13,5 @@ rect_min_size = Vector2( 64, 64 )
 custom_styles/panel = ExtResource( 4 )
 script = ExtResource( 2 )
 ItemObject = ExtResource( 3 )
+ItemGeneratorObject = ExtResource( 5 )
 ItemDragPreview = ExtResource( 1 )
