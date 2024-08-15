@@ -13,16 +13,18 @@ func _ready():
 
 func save_field_json():
 	var slot_list : String = " " 
+	print(game_slots.get_children())
 	for game_slot in game_slots.get_children():
-		print(game_slot.item.item_data)
-		var slot := {
-			"item_data":{
-				"item_data": game_slot.item
-#				"name": game_slot.item.name,
-#				"sprite": "res://"
-			}  
-		}
-		slot_list += str(slot)
+		if game_slot.get_child_count() > 0:
+			print(game_slot.get_child(0).item_data.name)
+			var slot := {
+				"slot_data":{
+					"item_data": game_slot.item
+	#				"name": game_slot.item.name,
+	#				"sprite": "res://"
+				}  
+			}
+			slot_list += str(slot)
 	print("---------------------------------")
 	var save_path := "res://test_file.json"
 	var json_string := slot_list.json_escape()
