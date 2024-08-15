@@ -62,7 +62,7 @@ func drop_data(position: Vector2, data) -> void:
 	# Check if item is null or not, if it's not null then
 	if item != null:
 		# We check if both items are equal, if it's same then
-		if dropped_item.item_data == item.item_data:
+		if dropped_item.item_data.name == item.item_data.name && dropped_item.item_data.tier == item.item_data.tier:
 			# Upgrade the tier
 			item.item_data.updgrade_tier()
 			# Remove the child from the the slot it dropped on this one and reset it.
