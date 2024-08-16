@@ -10,20 +10,22 @@ anchor_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 72.0
-margin_top = 82.0
-margin_right = 922.0
-margin_bottom = 481.0
+margin_left = 417.0
+margin_top = 36.0
+margin_right = 888.0
+margin_bottom = 507.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 1 )
 expand = true
 
-[node name="VisualGrid" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="VisualGrid" type="Control" parent="TextureRect"]
+margin_left = -232.0
+margin_top = -46.0
+margin_right = -192.0
+margin_bottom = -6.0
 
-[node name="GridContainer2" type="GridContainer" parent="VisualGrid"]
+[node name="GridContainer2" type="GridContainer" parent="TextureRect/VisualGrid"]
 margin_left = 300.0
 margin_top = 111.0
 margin_right = 640.0
@@ -33,138 +35,138 @@ custom_constants/vseparation = 54
 custom_constants/hseparation = 10
 columns = 4
 
-[node name="ColorRect" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_right = 75.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect5" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect5" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 85.0
 margin_right = 160.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect6" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect6" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 170.0
 margin_right = 245.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect7" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect7" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 255.0
 margin_right = 330.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect8" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect8" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_top = 79.0
 margin_right = 75.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect2" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 85.0
 margin_top = 79.0
 margin_right = 160.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect9" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect9" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 170.0
 margin_top = 79.0
 margin_right = 245.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect10" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect10" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 255.0
 margin_top = 79.0
 margin_right = 330.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect11" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect11" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_top = 158.0
 margin_right = 75.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect12" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect12" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 85.0
 margin_top = 158.0
 margin_right = 160.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect13" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect13" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 170.0
 margin_top = 158.0
 margin_right = 245.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect14" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect14" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 255.0
 margin_top = 158.0
 margin_right = 330.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect15" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect15" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_top = 237.0
 margin_right = 75.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect16" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect16" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 85.0
 margin_top = 237.0
 margin_right = 160.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect17" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect17" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 170.0
 margin_top = 237.0
 margin_right = 245.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect18" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect18" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 255.0
 margin_top = 237.0
 margin_right = 330.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect19" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect19" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_top = 316.0
 margin_right = 75.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect20" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect20" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 85.0
 margin_top = 316.0
 margin_right = 160.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect3" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect3" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 170.0
 margin_top = 316.0
 margin_right = 245.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect4" type="ColorRect" parent="VisualGrid/GridContainer2"]
+[node name="ColorRect4" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer2"]
 margin_left = 255.0
 margin_top = 316.0
 margin_right = 330.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="GridContainer3" type="GridContainer" parent="VisualGrid"]
+[node name="GridContainer3" type="GridContainer" parent="TextureRect/VisualGrid"]
 margin_left = 640.0
 margin_top = 111.0
 margin_right = 980.001
@@ -175,271 +177,271 @@ custom_constants/vseparation = 54
 custom_constants/hseparation = 10
 columns = 4
 
-[node name="ColorRect" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_right = 75.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect5" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect5" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 85.0
 margin_right = 160.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect6" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect6" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 170.0
 margin_right = 245.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect7" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect7" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 255.0
 margin_right = 330.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect8" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect8" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_top = 79.0
 margin_right = 75.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect2" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 85.0
 margin_top = 79.0
 margin_right = 160.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect9" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect9" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 170.0
 margin_top = 79.0
 margin_right = 245.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect10" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect10" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 255.0
 margin_top = 79.0
 margin_right = 330.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect11" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect11" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_top = 158.0
 margin_right = 75.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect12" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect12" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 85.0
 margin_top = 158.0
 margin_right = 160.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect13" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect13" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 170.0
 margin_top = 158.0
 margin_right = 245.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect14" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect14" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 255.0
 margin_top = 158.0
 margin_right = 330.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect15" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect15" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_top = 237.0
 margin_right = 75.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect16" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect16" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 85.0
 margin_top = 237.0
 margin_right = 160.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect17" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect17" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 170.0
 margin_top = 237.0
 margin_right = 245.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect18" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect18" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 255.0
 margin_top = 237.0
 margin_right = 330.0
 margin_bottom = 262.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect19" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect19" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_top = 316.0
 margin_right = 75.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect20" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect20" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 85.0
 margin_top = 316.0
 margin_right = 160.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect3" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect3" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 170.0
 margin_top = 316.0
 margin_right = 245.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="ColorRect4" type="ColorRect" parent="VisualGrid/GridContainer3"]
+[node name="ColorRect4" type="ColorRect" parent="TextureRect/VisualGrid/GridContainer3"]
 margin_left = 255.0
 margin_top = 316.0
 margin_right = 330.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 280.0
-margin_top = 92.0
-margin_right = 660.0
-margin_bottom = 472.0
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+margin_left = 48.0
+margin_top = 46.0
+margin_right = 428.0
+margin_bottom = 426.0
 custom_constants/vseparation = 15
 custom_constants/hseparation = 15
 columns = 5
 
-[node name="Slot 1" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 1" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 
-[node name="Slot 2" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 2" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 79.0
 margin_right = 143.0
 
-[node name="Slot 3" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 3" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 158.0
 margin_right = 222.0
 
-[node name="Slot 4" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 4" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 237.0
 margin_right = 301.0
 
-[node name="Slot 5" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 5" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 316.0
 margin_right = 380.0
 
-[node name="Slot 6" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 6" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_top = 79.0
 margin_bottom = 143.0
 
-[node name="Slot 7" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 7" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 79.0
 margin_top = 79.0
 margin_right = 143.0
 margin_bottom = 143.0
 
-[node name="Slot 8" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 8" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 158.0
 margin_top = 79.0
 margin_right = 222.0
 margin_bottom = 143.0
 
-[node name="Slot 9" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 9" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 237.0
 margin_top = 79.0
 margin_right = 301.0
 margin_bottom = 143.0
 
-[node name="Slot 10" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 10" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 316.0
 margin_top = 79.0
 margin_right = 380.0
 margin_bottom = 143.0
 
-[node name="Slot 11" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 11" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_top = 158.0
 margin_bottom = 222.0
 
-[node name="Slot 12" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 12" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 79.0
 margin_top = 158.0
 margin_right = 143.0
 margin_bottom = 222.0
 
-[node name="Slot 13" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 13" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 158.0
 margin_top = 158.0
 margin_right = 222.0
 margin_bottom = 222.0
 
-[node name="Slot 14" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 14" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 237.0
 margin_top = 158.0
 margin_right = 301.0
 margin_bottom = 222.0
 
-[node name="Slot 15" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 15" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 316.0
 margin_top = 158.0
 margin_right = 380.0
 margin_bottom = 222.0
 
-[node name="Slot 16" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 16" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_top = 237.0
 margin_bottom = 301.0
 
-[node name="Slot 17" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 17" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 79.0
 margin_top = 237.0
 margin_right = 143.0
 margin_bottom = 301.0
 
-[node name="Slot 18" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 18" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 158.0
 margin_top = 237.0
 margin_right = 222.0
 margin_bottom = 301.0
 
-[node name="Slot 19" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 19" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 237.0
 margin_top = 237.0
 margin_right = 301.0
 margin_bottom = 301.0
 
-[node name="Slot 20" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 20" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 316.0
 margin_top = 237.0
 margin_right = 380.0
 margin_bottom = 301.0
 
-[node name="Slot 21" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 21" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_top = 316.0
 margin_bottom = 380.0
 
-[node name="Slot 22" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 22" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 79.0
 margin_top = 316.0
 margin_right = 143.0
 margin_bottom = 380.0
 
-[node name="Slot 23" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 23" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 158.0
 margin_top = 316.0
 margin_right = 222.0
 margin_bottom = 380.0
 
-[node name="Slot 24" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 24" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 237.0
 margin_top = 316.0
 margin_right = 301.0
 margin_bottom = 380.0
 
-[node name="Slot 25" parent="GridContainer" instance=ExtResource( 5 )]
+[node name="Slot 25" parent="TextureRect/GridContainer" instance=ExtResource( 5 )]
 margin_left = 316.0
 margin_top = 316.0
 margin_right = 380.0
