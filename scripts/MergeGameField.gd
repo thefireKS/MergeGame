@@ -6,7 +6,7 @@ var holding_item  = null
 var mouse_left_down: bool = false
 
 func _ready():
-	pass
+	GridObserver.connect("send_item",self,"instantiate_item_on_empty_slot")
 
 func save_field_json():
 	var slot_list: Dictionary = {}
@@ -48,6 +48,14 @@ func load_field_json():
 		else:
 			game_slot.item = null
 			game_slot.refresh_tier()
+
+func instantiate_item_on_empty_slot(item):
+	var empty_slot_list = []
+	for game_slot in game_slots.get_children():
+		if game_slot.get_item_data() == null:
+			empty_slot_list.push_back(game_slot)
+	
+	empty_slot_list[randi() % empty_slot_list.size()].instantiate_new_item(item)
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):

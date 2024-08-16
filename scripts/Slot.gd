@@ -67,7 +67,7 @@ func drop_data(position: Vector2, data) -> void:
 	# Check if item is null or not, if it's not null then
 	if item != null:
 		# We check if both items are equal, if it's same then
-		if dropped_item.item_data.name == item.item_data.name && dropped_item.tier == item.tier:
+		if dropped_item.item_data.name == item.item_data.name && dropped_item.tier == item.tier && dropped_item.tier < dropped_item.item_data.sprites.size():
 			# Upgrade the tier
 			item.upgrade_tier()
 			# Remove the child from the the slot it dropped on this one and reset it.
@@ -108,6 +108,13 @@ func get_item_data():
 		return null
 	else:
 		return item.get_data()
+
+func instantiate_new_item(data):
+	item = ItemObject.instance()
+	add_child(item)
+	item.item_data = data
+	item.refresh()
+	refresh_style()
 
 # This is just repeated above in logic, so made it into function.
 func reset() -> void:

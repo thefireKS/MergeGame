@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=7 format=2]
 
-[ext_resource path="res://item_data/mergebale_item.gd" type="Script" id=1]
+[ext_resource path="res://item_data/MergeableItemData.gd" type="Script" id=1]
 [ext_resource path="res://sprites/TestMSprite1/TS1_T1.png" type="Texture" id=2]
 [ext_resource path="res://sprites/TestMSprite1/TS1_T2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/TestMSprite1/TS1_T3.png" type="Texture" id=4]
@@ -9,5 +9,7 @@
 
 [resource]
 script = ExtResource( 1 )
-name = ""
+name = "TestItem1"
+is_generator = false
 sprites = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
+items_to_generate = [  ]

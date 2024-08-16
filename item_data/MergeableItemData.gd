@@ -1,16 +1,18 @@
 extends Resource
-class_name mergebale_item
+class_name MergeableItemData
 
 export var name : String
+export var is_generator : bool
 #export var tier1_sprite : Texture
 #export var tier2_sprite : Texture
 #export var tier3_sprite : Texture
 #export var tier4_sprite : Texture
 #export var tier5_sprite : Texture
 export var sprites: Array
+export var items_to_generate: Array
 
 func  get_sprite(tier : int) -> Texture:
-	if tier < 0 or tier >= sprites.size():
+	if tier < 0 or tier > sprites.size():
 		return null
 	else:
 		return sprites[tier-1]

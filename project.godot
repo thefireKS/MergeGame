@@ -14,20 +14,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Item.gd"
 }, {
+"base": "Resource",
+"class": "MergeableItemData",
+"language": "GDScript",
+"path": "res://item_data/MergeableItemData.gd"
+}, {
+"base": "Resource",
+"class": "OrderItemData",
+"language": "GDScript",
+"path": "res://item_data/OrderItemData.gd"
+}, {
 "base": "Panel",
 "class": "SlotClass",
 "language": "GDScript",
 "path": "res://scripts/Slot.gd"
-}, {
-"base": "Resource",
-"class": "mergebale_item",
-"language": "GDScript",
-"path": "res://item_data/mergebale_item.gd"
 } ]
 _global_script_class_icons={
 "Item": "",
-"SlotClass": "",
-"mergebale_item": ""
+"MergeableItemData": "",
+"OrderItemData": "",
+"SlotClass": ""
 }
 
 [application]
@@ -36,9 +42,16 @@ config/name="MergeGame"
 run/main_scene="res://scenes/MergeGameField.tscn"
 config/icon="res://icon.png"
 
-[gui]
+[autoload]
 
-common/drop_mouse_on_gui_input_disabled=true
+GridObserver="*res://scripts/GridObserver.gd"
+
+[display]
+
+window/size/width=960
+window/size/height=540
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [input]
 
@@ -51,6 +64,7 @@ left_click={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [physics]
 
