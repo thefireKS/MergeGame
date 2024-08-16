@@ -7,8 +7,9 @@
 [ext_resource path="res://sprites/TestMSprite1/TS1_T5.png" type="Texture" id=5]
 [ext_resource path="res://sprites/TestMSprite1/TS1_T4.png" type="Texture" id=6]
 
-
 [resource]
 script = ExtResource( 1 )
-name = ""
+name = "TestItem1"
+is_generator = false
 sprites = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
+items_to_generate = [  ]
