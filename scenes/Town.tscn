@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/Town/Houses/House_Placeholder.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Town/Road Placeholder.png" type="Texture" id=2]
+[ext_resource path="res://scripts/HouseSelector.gd" type="Script" id=3]
+[ext_resource path="res://sprites/UI/LeftArrow.png" type="Texture" id=4]
+[ext_resource path="res://sprites/UI/CoinsPlaceholder.png" type="Texture" id=5]
+[ext_resource path="res://Coins.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ProceedInput.gd" type="Script" id=7]
+
+[node name="Town" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Houses" type="Node2D" parent="."]
+
+[node name="House" type="Node2D" parent="Houses"]
+
+[node name="Sprite" type="Sprite" parent="Houses/House"]
+position = Vector2( 73, 73 )
+scale = Vector2( 0.285156, 0.285156 )
+texture = ExtResource( 1 )
+
+[node name="House2" type="Node2D" parent="Houses"]
+position = Vector2( 447, 83 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House2"]
+position = Vector2( 73, 73 )
+scale = Vector2( 0.285156, 0.285156 )
+texture = ExtResource( 1 )
+
+[node name="Road" type="Node2D" parent="."]
+position = Vector2( 259, 311 )
+
+[node name="Sprite" type="Sprite" parent="Road"]
+scale = Vector2( 1, 0.135742 )
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2( 413, 239 )
+current = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LeftButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 9.0
+margin_top = 287.0
+margin_right = 49.0
+margin_bottom = 327.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="RightButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 1007.0
+margin_top = 340.0
+margin_right = 1047.0
+margin_bottom = 380.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Coins" type="Control" parent="CanvasLayer"]
+margin_left = 878.0
+margin_top = 8.0
+margin_right = 918.0
+margin_bottom = 48.0
+script = ExtResource( 6 )
+
+[node name="Coins Sprite" type="TextureRect" parent="CanvasLayer/Coins"]
+rect_scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 5 )
+
+[node name="CurrentNubmer" type="Label" parent="CanvasLayer/Coins"]
+margin_left = 69.0
+margin_top = -1.0
+margin_right = 118.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0.835294, 0.662745, 0.282353, 1 )
+text = "monety"
+
+[node name="Input Manager" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[connection signal="pressed" from="CanvasLayer/LeftButton" to="Input Manager" method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/RightButton" to="Input Manager" method="_on_RightButton_pressed"]
