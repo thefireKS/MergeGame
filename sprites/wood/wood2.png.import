@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TS_GEN.png-19743ccbffc167f865fbda5ce984b7c5.stex"
+path="res://.import/wood2.png-46e5e75ce11256cda775ad3a9d2890b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TS_GEN.png"
-dest_files=[ "res://.import/TS_GEN.png-19743ccbffc167f865fbda5ce984b7c5.stex" ]
+source_file="res://sprites/wood/wood2.png"
+dest_files=[ "res://.import/wood2.png-46e5e75ce11256cda775ad3a9d2890b8.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

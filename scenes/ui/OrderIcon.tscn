@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/OrderIcon.gd" type="Script" id=1]
-[ext_resource path="res://sprites/TestMSprite1/TS1_T1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/pencilpack/pencilpack4.png" type="Texture" id=2]
 
 [node name="OrderIcon" type="TextureRect"]
-anchor_right = 0.052
-anchor_bottom = 0.093
-margin_right = 0.079998
-margin_bottom = -0.220001
+anchor_right = 0.104
+anchor_bottom = 0.185
+margin_right = 0.159996
+margin_bottom = 0.0999985
+rect_min_size = Vector2( 100, 100 )
 texture = ExtResource( 2 )
-stretch_mode = 5
+expand = true
 script = ExtResource( 1 )

@@ -5,10 +5,12 @@
 [ext_resource path="res://scenes/Particles.tscn" type="PackedScene" id=3]
 
 [node name="TextureRect" type="TextureRect"]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 56.0
 texture = ExtResource( 1 )
+expand = true
 script = ExtResource( 2 )
 particles = ExtResource( 3 )
 tier = 1

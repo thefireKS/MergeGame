@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/InventoryBackGround.png" type="Texture" id=1]
+[ext_resource path="res://scenes/ui/OrderList.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/MergeGameField.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Slot.tscn" type="PackedScene" id=5]
 
@@ -8,6 +9,16 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
+
+[node name="OrderList" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.033
+anchor_top = 0.076
+anchor_right = 0.378
+anchor_bottom = 0.261
+margin_left = 0.32
+margin_top = -0.0400009
+margin_right = 0.119995
+margin_bottom = 0.0599976
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 417.0
@@ -309,6 +320,7 @@ margin_bottom = 341.0
 rect_min_size = Vector2( 75, 25 )
 
 [node name="GridContainer" type="GridContainer" parent="TextureRect"]
+unique_name_in_owner = true
 margin_left = 48.0
 margin_top = 46.0
 margin_right = 428.0

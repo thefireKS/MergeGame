@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex"
+path="res://.import/GridFiller.png-e2ce79fe5bbf5946c8872f9296195522.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridElementEmpty.png"
-dest_files=[ "res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex" ]
+source_file="res://sprites/GridFiller.png"
+dest_files=[ "res://.import/GridFiller.png-e2ce79fe5bbf5946c8872f9296195522.stex" ]
 
 [params]
 

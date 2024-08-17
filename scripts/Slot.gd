@@ -11,11 +11,12 @@ var item: Item = null
 
 
 func _ready():
-	randomize()
-	if randi() % 2 == 0 :
-		item = ItemObject.instance()
-		add_child(item)
-	refresh_style()
+	pass
+#	randomize()
+#	if randi() % 2 == 0 :
+#		item = ItemObject.instance()
+#		add_child(item)
+#	refresh_style()
 	
 #	print(item.item_data)
 
@@ -25,7 +26,7 @@ func refresh_style():
 	else:
 		set('custom_styles/panel', FilledStyle)
 
-func refresh_tier():
+func refresh_item_tier():
 	if item != null:
 		item.refresh()
 	refresh_style()
@@ -100,8 +101,8 @@ func drop_data(position: Vector2, data) -> void:
 	refresh_style()
 	
 	# Refresh the tier
-	dropped_item_parent.refresh_tier()
-	refresh_tier()
+	dropped_item_parent.refresh_item_tier()
+	refresh_item_tier()
 
 func get_item_data():
 	if item == null:
@@ -122,6 +123,6 @@ func reset() -> void:
 		remove_child(item)
 		item = null
 	refresh_style()
-#
+
 #func get_slot_item() -> Item:
 #	return item

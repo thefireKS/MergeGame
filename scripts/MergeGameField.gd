@@ -1,6 +1,6 @@
 extends Control
 
-onready var game_slots = $GridContainer
+onready var game_slots = $"%GridContainer"
 var holding_item  = null
 
 var mouse_left_down: bool = false
@@ -36,7 +36,6 @@ func load_field_json():
 	
 	for game_slot in game_slots.get_children():
 		if content.has(game_slot.name):
-#			print(content[game_slot.name].keys()[0])
 			if game_slot.item == null:
 				game_slot.item = game_slot.ItemObject.instance()
 				game_slot.add_child(game_slot.item)
@@ -44,10 +43,10 @@ func load_field_json():
 			game_slot.item.tier = int(content[game_slot.name].values()[0])
 			game_slot.item.item_data = load(content[game_slot.name].keys()[0])
 			
-			game_slot.refresh_tier()
+			game_slot.refresh_item_tier()
 		else:
 			game_slot.item = null
-			game_slot.refresh_tier()
+			game_slot.refresh_item_tier()
 
 func instantiate_item_on_empty_slot(item):
 	var empty_slot_list = []

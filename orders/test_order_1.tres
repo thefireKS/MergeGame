@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource( 1 )
 order = {
-Resource( "res://items/test_item_2.tres" ): 4,
-Resource( "res://items/test_item_1.tres" ): 5
+Resource( "res://items/wood.tres" ): 4
 }
