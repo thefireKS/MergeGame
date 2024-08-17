@@ -29,3 +29,6 @@ class Coins:
 
 	func updateUI(amount: int):
 		UICurrency.text = str(amount)
+	
+	func get_coins():
+		return amount
