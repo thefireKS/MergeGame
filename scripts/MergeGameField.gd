@@ -18,8 +18,20 @@ func save_field_json():
 #			print(game_slot.get_child(0).item_data.name)
 			slot_list[game_slot.name] = slot_item_data
 #	print("---------------------------------")
-	var save_path := "res://test_file.json"
+	var save_path := "user://test_file.json"
 	var json_string := JSON.print(slot_list)
+	
+	#saving file
+	var file := File.new()
+	file.open(save_path,File.WRITE)
+	file.store_string(json_string)
+	file.close()
+
+func save_template_json():
+	var slot_list: Dictionary = {} 
+	
+	var save_path := "user://test_file.json"
+	var json_string := JSON.print({"Slot 13":{"res://items/generator_wood_pencilpack.tres":1}})
 	
 	#saving file
 	var file := File.new()
@@ -29,7 +41,9 @@ func save_field_json():
 
 func load_field_json():
 	var file := File.new()
-	file.open("res://test_file.json", File.READ)
+	if !file.file_exists("user://test_file.json"):
+		save_template_json()
+	file.open("user://test_file.json", File.READ)
 	var content = JSON.parse(file.get_as_text()).result
 	file.close()
 	for game_slot in game_slots.get_children():

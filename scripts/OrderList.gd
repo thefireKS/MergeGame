@@ -1,4 +1,4 @@
-extends TextureRect
+extends ColorRect
 
 export var order_data : Resource
 export var order_icon : PackedScene
