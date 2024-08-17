@@ -77,3 +77,7 @@ func _process(delta):
 #		print("File Saved!")
 	if Input.is_key_pressed(KEY_ENTER):
 		load_field_json()
+
+
+func _on_Button_pressed():
+	get_tree().reload_current_scene()

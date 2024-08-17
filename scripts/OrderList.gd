@@ -31,8 +31,20 @@ func update_order_state(item_res: Resource, tier: int, scene: Item):
 func check_for_complete() -> bool:
 	var on_field_count = 0
 	for order in listed_order_array:
-		if order.on_field:
-			on_field_count += 1
+		if !order.item_scene == null:
+			if order.item_tier != order.item_scene.tier:
+				order.on_field = false
+				order.item_scene = null
+			if order.on_field && order.item_tier != order.item_scene.tier:
+				order.on_field = false
+				order.item_scene = null
+			if order.on_field && order.item_tier == order.item_scene.tier:
+				on_field_count += 1
+		else:
+			order.on_field = false
+		
+		print(str(order.item_scene) + " " + str(order.on_field))
+	
 	if on_field_count == listed_order_array.size():
 		return true
 	else:
