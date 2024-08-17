@@ -28,7 +28,7 @@ func _ready():
 #	refresh()
 
 
-func refresh():	
+func refresh():
 	if !item_data.is_generator:
 		var prt = find_node("Particles")
 		if prt:
@@ -46,7 +46,7 @@ func refresh():
 	
 	texture = item_data.get_sprite(tier)
 	
-	GridObserver.send_item_to_order(item_data, tier)
+	GridObserver.send_item_to_order(item_data, tier, self)
 #	$Label.text = str(tier)
 
 

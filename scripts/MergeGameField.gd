@@ -7,6 +7,7 @@ var mouse_left_down: bool = false
 
 func _ready():
 	GridObserver.connect("send_item",self,"instantiate_item_on_empty_slot")
+	load_field_json()
 
 func save_field_json():
 	var slot_list: Dictionary = {}

@@ -6,9 +6,9 @@
 [node name="OrderIcon" type="TextureRect"]
 anchor_right = 0.104
 anchor_bottom = 0.185
-margin_right = 0.159996
-margin_bottom = 0.0999985
-rect_min_size = Vector2( 100, 100 )
+margin_right = -199.68
+margin_bottom = -199.8
+rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 2 )
 expand = true
 script = ExtResource( 1 )
