@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TS2_T3.png-18241bade7bca2a2a6f83d3723400a62.stex"
+path="res://.import/MergeGuide.png-5630ec301773c932a15b89ac5066669e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/TestMSprite2/TS2_T3.png"
-dest_files=[ "res://.import/TS2_T3.png-18241bade7bca2a2a6f83d3723400a62.stex" ]
+source_file="res://sprites/MergeGuide.png"
+dest_files=[ "res://.import/MergeGuide.png-5630ec301773c932a15b89ac5066669e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
