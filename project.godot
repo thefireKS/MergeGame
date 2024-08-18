@@ -24,16 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item_data/MergeableItemData.gd"
 }, {
-"base": "Node",
-"class": "Utils",
-"language": "GDScript",
-"path": "res://ar-engine-sdk/utils.gd"
-}, {
-"base": "Node",
-"class": "WebSocket",
-"language": "GDScript",
-"path": "res://ar-engine-sdk/websocket.gd"
-}, {
 "base": "Resource",
 "class": "OrderItemData",
 "language": "GDScript",
@@ -43,15 +33,25 @@ _global_script_classes=[ {
 "class": "SlotClass",
 "language": "GDScript",
 "path": "res://scripts/Slot.gd"
+}, {
+"base": "Node",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://ar-engine-sdk/utils.gd"
+}, {
+"base": "Node",
+"class": "WebSocket",
+"language": "GDScript",
+"path": "res://ar-engine-sdk/websocket.gd"
 } ]
 _global_script_class_icons={
 "Application": "",
 "Item": "",
+"MergeableItemData": "",
+"OrderItemData": "",
 "SlotClass": "",
 "Utils": "",
-"WebSocket": "",
-"MergeableItemData": "",
-"OrderItemData": ""
+"WebSocket": ""
 }
 
 [application]
@@ -71,8 +71,6 @@ GridObserver="*res://scripts/GridObserver.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/resizable=false
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

@@ -20,7 +20,7 @@ func _ready():
 	house_manager = HouseManager.new(houses, house_positions, camera, tween, hud_node)
 	house_manager.update_camera_position()
 
-class HouseManager:
+class HouseManager extends Node2D:
 	var houses
 	var house_positions
 	var camera
@@ -49,8 +49,8 @@ class HouseManager:
 		#hud.move_town(distance)
 		print("current_index: ", current_index)
 		hud.active_house(current_index)
-		hud.active_house(current_index)
 		#hud.change_house_state(current_index, hud.REGULAR)
+
 		
 	func update_camera_position():
 		tween.interpolate_property(camera, "position", camera.position, 
@@ -58,7 +58,6 @@ class HouseManager:
 		tween.start()
 		highlight_house()
 
-		
 	func highlight_house():
 		for i in range(houses.size()):
 			var house = houses[i]
@@ -67,5 +66,6 @@ class HouseManager:
 			else:
 				house.modulate = Color(0.5, 0.5, 0.5, 1)
 				
+	
 	func get_current_index():
 		return current_index
