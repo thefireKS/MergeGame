@@ -1,0 +1,6 @@
+extends ARGroup
+
+func house_debug():
+	api("out", "i m houses")
+	
+	

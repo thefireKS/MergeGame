@@ -4,10 +4,13 @@ enum State { DIALOG_1, SELECT_HOUSE, DIALOG_2, TASK_COMPLETION }
 
 var current_state = State.DIALOG_1
 var dialog_scene
+var hud
 
+onready var hud_node = $"%HUD Connector"
 onready var canvas = $"../CanvasLayer"
 
 func _ready():
+	hud = hud_node.hud
 	get_scene_ready()
 	dialog_scene.connect("dialog_completed", self, "_on_dialog_completed")
 	start_dialog_1()
@@ -54,7 +57,9 @@ func _on_house_selected(house_index):
 	if current_state == State.SELECT_HOUSE:
 		if house_index == 1:
 			print("Выбран второй дом:")
+			hud.change_house_state(1, hud.REGULAR)
 			start_dialog_2()
+			
 
 func get_scene_ready():
 	if dialog_scene == null:

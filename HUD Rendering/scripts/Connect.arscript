@@ -1,0 +1,49 @@
+extends ARMain
+
+var houses = []
+var house_positions = []
+var town = get_ar_element("Town")
+
+func start():
+
+	api("connect_to_swp_app", {
+		"target_node" : self,
+		"on_message" : "on_message",
+		"on_error" : "on_error",
+		"on_connected" : "on_connected",
+		"on_disconnected" : "on_disconnected"
+	})
+	api("out", "connectdd")
+	houses = get_ar_element("Town/Houses")
+	town = get_ar_element("Town")
+
+func on_message(message):
+	if message is Dictionary:
+		api("out", message)
+			
+		if message["type"] == "active":
+			api("out", message["index"]-town.current_index)
+			town.change_active_house(message["index"]-town.current_index)
+			
+		if message["type"] == "sprite":
+			api("out", message["index"]-town.current_index)
+			change_sprite(message["index"], message["state"])
+		
+func change_sprite(houseIndex:int, state:int):
+	for i in range(1, houses.get_child_count()):
+		if i == houseIndex+1:
+			api("out", "im trying to change frame")
+			houses.get_child(i).frame = state
+			api("out", "i changed sprite for" +str(houses.get_child(i).name))
+
+
+func on_connected():
+	api("out", "Connected")
+
+
+func on_disconnected():
+	api("out", "Disconnected")
+
+
+func on_error(error_text:String):
+	api("out", to_json(error_text))

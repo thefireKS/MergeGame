@@ -39,10 +39,10 @@ func is_selected():
 func on_interact():
 	hud = hud_node.hud
 	print(hud)
-	hud.change_house_state(town_node.house_manager.get_current_index(), hud.BLYAT)
 	if coins_node.coins.get_coins() - upgrade_cost >= 0:
 		coins_node.coins.subtract(upgrade_cost)
 		level_up()
+		hud.change_house_state(town_node.house_manager.get_current_index(), hud.BLYAT)
 		inflate_cost(100)
 	print("Interacted with house: ", self.name)
 	#ужас нагрузка

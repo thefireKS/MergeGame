@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://scenes/House.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/Town/Road Placeholder.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Town/Houses/E.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Town/Houses/h23.png" type="Texture" id=2]
 [ext_resource path="res://scripts/HouseSelector.gd" type="Script" id=3]
 [ext_resource path="res://sprites/UI/LeftArrow.png" type="Texture" id=4]
 [ext_resource path="res://sprites/UI/CoinsPlaceholder.png" type="Texture" id=5]
@@ -9,27 +9,155 @@
 [ext_resource path="res://scripts/ProceedInput.gd" type="Script" id=7]
 [ext_resource path="res://scripts/StoryManager.gd" type="Script" id=8]
 [ext_resource path="res://scripts/HUD Connector.gd" type="Script" id=9]
+[ext_resource path="res://sprites/Town/Houses/a.PNG" type="Texture" id=10]
+[ext_resource path="res://sprites/Town/Houses/h1.PNG" type="Texture" id=11]
+[ext_resource path="res://sprites/Town/Houses/h4.PNG" type="Texture" id=12]
+[ext_resource path="res://sprites/Town/Houses/z.PNG" type="Texture" id=13]
+[ext_resource path="res://sprites/Town/Houses/road.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Town/Houses/back_FR.png" type="Texture" id=15]
+[ext_resource path="res://scripts/House.gd" type="Script" id=16]
+[ext_resource path="res://sprites/Town/Houses/back_FL.png" type="Texture" id=17]
+[ext_resource path="res://sprites/Town/Houses/back_R.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Town/Houses/back_L.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 375, 651 )
 
 [node name="Town" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Houses" type="Node2D" parent="."]
+[node name="Back" type="Node2D" parent="."]
 
-[node name="House" parent="Houses" instance=ExtResource( 1 )]
-position = Vector2( -1, 0 )
+[node name="Sprite" type="Sprite" parent="Back"]
+position = Vector2( -665, -82 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
 
-[node name="House2" parent="Houses" instance=ExtResource( 1 )]
-position = Vector2( 282, 3 )
+[node name="Sprite3" type="Sprite" parent="Back"]
+position = Vector2( 74, -34 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+
+[node name="Sprite4" type="Sprite" parent="Back"]
+modulate = Color( 0.670588, 0.670588, 0.670588, 1 )
+position = Vector2( 952, -95 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+
+[node name="Sprite2" type="Sprite" parent="Back"]
+modulate = Color( 0.623529, 0.623529, 0.623529, 1 )
+position = Vector2( 2204, -137 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
 
 [node name="Road" type="Node2D" parent="."]
-position = Vector2( 259, 311 )
 
 [node name="Sprite" type="Sprite" parent="Road"]
-scale = Vector2( 1, 0.135742 )
+position = Vector2( 913, 458.14 )
+scale = Vector2( 3.83333, 0.754361 )
+texture = ExtResource( 14 )
+
+[node name="Houses" type="Node2D" parent="."]
+
+[node name="House1" type="StaticBody2D" parent="Houses"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House1"]
+position = Vector2( -1490, 590 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House1/Node2D"]
+texture = ExtResource( 10 )
+offset = Vector2( 0, -643 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House1"]
+position = Vector2( -1509, -63 )
+shape = SubResource( 1 )
+
+[node name="House2" type="StaticBody2D" parent="Houses"]
+position = Vector2( 358, -4 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House2"]
+position = Vector2( -846, 568 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House2/Node2D"]
+texture = ExtResource( 13 )
+offset = Vector2( 0, -600 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House2"]
+position = Vector2( -832, -82 )
+shape = SubResource( 1 )
+
+[node name="House3" type="StaticBody2D" parent="Houses"]
+position = Vector2( 1014, -17 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House3"]
+position = Vector2( -670, 584 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House3/Node2D"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -190 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House3"]
+position = Vector2( -656, -66 )
+shape = SubResource( 1 )
+
+[node name="House4" type="StaticBody2D" parent="Houses"]
+position = Vector2( 1338, -40 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House4"]
+position = Vector2( -12, 604 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House4/Node2D"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
+offset = Vector2( 0, -150 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House4"]
+position = Vector2( 2, -46 )
+shape = SubResource( 1 )
+
+[node name="House5" type="StaticBody2D" parent="Houses"]
+position = Vector2( 1578, -45 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House5"]
+position = Vector2( 600, 580 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House5/Node2D"]
+texture = ExtResource( 12 )
+offset = Vector2( 0, -779 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House5"]
+position = Vector2( 614, -70 )
+shape = SubResource( 1 )
+
+[node name="House6" type="StaticBody2D" parent="Houses"]
+position = Vector2( 1903, -23 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 16 )
+
+[node name="Node2D" type="Node2D" parent="Houses/House6"]
+position = Vector2( 1184, 580 )
+
+[node name="Sprite" type="Sprite" parent="Houses/House6/Node2D"]
+texture = ExtResource( 11 )
+offset = Vector2( 0, -779 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Houses/House6"]
+position = Vector2( 1198, -70 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 510, 298 )
+position = Vector2( 837, 307 )
 current = true
 
 [node name="Tween" type="Tween" parent="."]
@@ -37,18 +165,18 @@ current = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LeftButton" type="TextureButton" parent="CanvasLayer"]
-margin_left = 9.0
-margin_top = 287.0
-margin_right = 49.0
-margin_bottom = 327.0
+margin_left = 39.0
+margin_top = 342.0
+margin_right = 79.0
+margin_bottom = 382.0
 texture_normal = ExtResource( 4 )
 expand = true
 
 [node name="RightButton" type="TextureButton" parent="CanvasLayer"]
-margin_left = 1007.0
-margin_top = 340.0
-margin_right = 1047.0
-margin_bottom = 380.0
+margin_left = 1766.0
+margin_top = 368.0
+margin_right = 1806.0
+margin_bottom = 408.0
 rect_rotation = 180.0
 texture_normal = ExtResource( 4 )
 expand = true

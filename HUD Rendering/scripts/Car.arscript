@@ -1,0 +1,30 @@
+extends ARImage
+
+var left_border = 100
+var right_border = 2600
+var start_anim = 1.0
+var end_anim = 3.0
+
+func _ready():
+	move_right()
+
+func move_left():
+	var left_anim = create_animation("left", right_border, left_border, start_anim, end_anim, Tween.TRANS_LINEAR, 1)
+	left_anim.connect("finished", self, "_on_left_animation_finished")
+	left_anim.play()
+
+func move_right():
+	var right_anim = create_animation("left", left_border, right_border, start_anim, end_anim, Tween.TRANS_LINEAR, 1)
+	right_anim.connect("finished", self, "_on_right_animation_finished")
+	right_anim.play()
+
+func _on_left_animation_finished():
+	change_sprite_frame(1)
+	move_right()
+
+func _on_right_animation_finished():
+	change_sprite_frame(-1)
+	move_left()
+
+func change_sprite_frame(delta:int):
+	self.frame += delta

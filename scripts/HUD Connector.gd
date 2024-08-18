@@ -12,11 +12,11 @@ func _ready() -> void:
 	})
 class HUD extends Application:
 	
-	const REGULAR = 0
-	const BLYAT = 1
+	const BLYAT = 0
+	const REGULAR = 1
 	func _init():
 		pass
-		
+	
 	func move_town(distance:int):
 		api('send_to_hud_app', {
 				"type" : "move",

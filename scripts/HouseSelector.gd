@@ -46,15 +46,18 @@ class HouseManager:
 		camera_last_position = get_camera_pos()
 		var distance:int = int(camera_last_position) - int(house_positions[current_index].x)
 		print(camera_last_position, "  ", house_positions[current_index].x," fsdp;kjfads ",distance)
-		hud.move_town(distance)
+		#hud.move_town(distance)
+		print("current_index: ", current_index)
 		hud.active_house(current_index)
-		hud.change_house_state(current_index, hud.REGULAR)
+		hud.active_house(current_index)
+		#hud.change_house_state(current_index, hud.REGULAR)
 		
 	func update_camera_position():
 		tween.interpolate_property(camera, "position", camera.position, 
 			house_positions[current_index], 0.5, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		tween.start()
 		highlight_house()
+
 		
 	func highlight_house():
 		for i in range(houses.size()):

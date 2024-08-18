@@ -1,0 +1,66 @@
+extends ARGroup
+
+var screen_center = Vector2(1820 / 2, 840 / 2)
+
+var houses = []
+var house_positions = []
+var current_index = 0
+
+func start():
+	api('subscribe_to', 'swp_left_joypad_right', 'on_swp_left_joypad_right_changed')
+	api('subscribe_to', 'swp_left_joypad_left', 'on_swp_left_joypad_left_changed')
+	houses = get_ar_element("Houses")
+	for i in range(1, houses.get_child_count()):
+		var house = houses.get_child(i)
+		house_positions.append(house.left)
+	update_house_position()
+	highlight_house()
+
+	
+func change_active_house(delta:int):
+	api("out", "changing active house ")
+	current_index = clamp(current_index + delta, 0,  houses.get_child_count() - 2)
+	api("out", "changed active to"+str(current_index))
+	update_house_position()
+	highlight_house()
+
+func update_house_position():
+	api("out", "updating house pos")
+	var margin = 100
+	var selected_house = houses.get_child(current_index+1)
+	var house_left_pos = selected_house.left+houses.left-margin
+	var house_right_pos = selected_house.left + selected_house.width +houses.left+margin
+	
+	api("out", "selected_house.left: "+ str(selected_house.left))
+	
+	if house_left_pos < 0:
+		api("out", "if left pos <0")
+		houses.left += abs(house_left_pos)
+	elif house_right_pos > screen_center.x * 2: 
+		api("out", "elif right pos >screen_center")
+		var target_position = houses.left - (house_right_pos - screen_center.x * 2)
+		houses.left -= (house_right_pos - screen_center.x * 2)
+	else:
+		api("out", "House is already within the visible area, no need to move.")
+		
+	api("out", "updated position to"+str(current_index))
+
+func on_swp_left_joypad_left_changed(state:String) -> void:
+	if state == "1":
+		change_active_house(-1)
+		update_house_position()
+		highlight_house()
+
+func on_swp_left_joypad_right_changed(data : String):
+	if data == "1":
+		change_active_house(1)
+		update_house_position()
+		highlight_house()
+		
+func highlight_house():
+	for i in range(1, houses.get_child_count()):
+			var house = houses.get_child(i)
+			if i == current_index+1 and i<houses.get_child_count():
+				house.paint = Color(1, 1, 1, 1)
+			else:
+				house.paint = Color(0.5, 0.5, 0.5, 1)
