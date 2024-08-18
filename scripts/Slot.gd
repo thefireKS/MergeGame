@@ -9,12 +9,16 @@ var EmptyStyle : StyleBoxTexture = preload("res://styles/MergeGameFieldEmptyStyl
 
 var item: Item = null
 
+
 func _ready():
-	randomize()
-	if randi() % 2 == 0 :
-		item = ItemObject.instance()
-		add_child(item)
-	refresh_style()
+	pass
+#	randomize()
+#	if randi() % 2 == 0 :
+#		item = ItemObject.instance()
+#		add_child(item)
+#	refresh_style()
+	
+#	print(item.item_data)
 
 func refresh_style():
 	if item == null:
@@ -22,9 +26,10 @@ func refresh_style():
 	else:
 		set('custom_styles/panel', FilledStyle)
 
-func refresh_tier():
+func refresh_item_tier():
 	if item != null:
 		item.refresh()
+	refresh_style()
 
 # When you drag from one slot to another, this gets called. 
 # This is where we add our preview too
@@ -63,9 +68,9 @@ func drop_data(position: Vector2, data) -> void:
 	# Check if item is null or not, if it's not null then
 	if item != null:
 		# We check if both items are equal, if it's same then
-		if dropped_item.item_data.name == item.item_data.name && dropped_item.item_data.tier == item.item_data.tier:
+		if dropped_item.item_data.name == item.item_data.name && dropped_item.tier == item.tier && dropped_item.tier < dropped_item.item_data.sprites.size():
 			# Upgrade the tier
-			item.item_data.updgrade_tier()
+			item.upgrade_tier()
 			# Remove the child from the the slot it dropped on this one and reset it.
 			dropped_item_parent.reset()
 		# If it's not same, swap it or place it.
@@ -96,13 +101,28 @@ func drop_data(position: Vector2, data) -> void:
 	refresh_style()
 	
 	# Refresh the tier
-	dropped_item_parent.refresh_tier()
-	refresh_tier()
+	dropped_item_parent.refresh_item_tier()
+	refresh_item_tier()
+
+func get_item_data():
+	if item == null:
+		return null
+	else:
+		return item.get_data()
+
+func instantiate_new_item(data):
+	item = ItemObject.instance()
+	add_child(item)
+	item.item_data = data
+	item.refresh()
+	refresh_style()
 
 # This is just repeated above in logic, so made it into function.
 func reset() -> void:
-	remove_child(item)
-	item = null
-#
+	if get_child_count() > 0:
+		remove_child(item)
+		item = null
+	refresh_style()
+
 #func get_slot_item() -> Item:
 #	return item

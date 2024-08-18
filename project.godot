@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Item.gd"
 }, {
-"base": "Panel",
-"class": "SlotClass",
+"base": "Resource",
+"class": "MergeableItemData",
 "language": "GDScript",
-"path": "res://scripts/Slot.gd"
+"path": "res://item_data/MergeableItemData.gd"
 }, {
 "base": "Node",
 "class": "Utils",
@@ -35,9 +35,14 @@ _global_script_classes=[ {
 "path": "res://ar-engine-sdk/websocket.gd"
 }, {
 "base": "Resource",
-"class": "mergebale_item",
+"class": "OrderItemData",
 "language": "GDScript",
-"path": "res://item_data/mergebale_item.gd"
+"path": "res://item_data/OrderItemData.gd"
+}, {
+"base": "Panel",
+"class": "SlotClass",
+"language": "GDScript",
+"path": "res://scripts/Slot.gd"
 } ]
 _global_script_class_icons={
 "Application": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "SlotClass": "",
 "Utils": "",
 "WebSocket": "",
-"mergebale_item": ""
+"MergeableItemData": "",
+"OrderItemData": ""
 }
 
 [application]
@@ -59,16 +65,16 @@ config/icon="res://icon.png"
 G="*res://ar-engine-sdk/global.gd"
 IC="*res://ar-engine-sdk/input_controller.gd"
 WS="*res://ar-engine-sdk/websocket.gd"
+GridObserver="*res://scripts/GridObserver.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
-
-[gui]
-
-common/drop_mouse_on_gui_input_disabled=true
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

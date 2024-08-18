@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex"
+path="res://.import/MergeGuide.png-5630ec301773c932a15b89ac5066669e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridElementEmpty.png"
-dest_files=[ "res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex" ]
+source_file="res://sprites/MergeGuide.png"
+dest_files=[ "res://.import/MergeGuide.png-5630ec301773c932a15b89ac5066669e.stex" ]
 
 [params]
 
