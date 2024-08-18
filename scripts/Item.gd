@@ -9,28 +9,26 @@ var timer
 var last_event
 
 func _ready():
-
+	pass
 #	if randi() % 2 == 0:
 #		item_data = load("res://items/test_item_1.tres")#.duplicate()
 ##		item_data.set_meta("path", "res://items/test_item_1.tres")
 #	else:
 #		item_data = load("res://items/test_item_2.tres")#.duplicate()
 ##		item_data.set_meta("path", "res://items/test_item_2.tres")
-	var rng : int = randi() % 3
-	match rng:
-		0:
-			item_data = load("res://items/test_item_1.tres")#.duplicate()
-		1:
-			item_data = load("res://items/test_item_2.tres")#.duplicate()
-		2:
-			item_data = load("res://items/test_item_2.tres")
-	
-	refresh()
+#	var rng : int = randi() % 3
+#	match rng:
+#		0:
+#			item_data = load("res://items/test_item_1.tres")#.duplicate()
+#		1:
+#			item_data = load("res://items/test_item_2.tres")#.duplicate()
+#		2:
+#			item_data = load("res://items/test_item_2.tres")
+#
+#	refresh()
 
 
 func refresh():
-	print(str(item_data.name) + " " + str(item_data.is_generator))
-	
 	if !item_data.is_generator:
 		var prt = find_node("Particles")
 		if prt:
@@ -47,6 +45,8 @@ func refresh():
 		add_child(generator_particles)
 	
 	texture = item_data.get_sprite(tier)
+	
+	GridObserver.send_item_to_order(item_data, tier, self)
 #	$Label.text = str(tier)
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex"
+path="res://.import/pencilpack1.png-99f526f7d705ae2a434527dc2ae32372.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridElementEmpty.png"
-dest_files=[ "res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex" ]
+source_file="res://sprites/pencilpack/pencilpack1.png"
+dest_files=[ "res://.import/pencilpack1.png-99f526f7d705ae2a434527dc2ae32372.stex" ]
 
 [params]
 
