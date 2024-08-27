@@ -47,10 +47,14 @@ margin_bottom = 318.02
 order_data = ExtResource( 6 )
 
 [node name="TextureRect" type="ColorRect" parent="."]
-margin_left = 850.0
-margin_top = 40.0
-margin_right = 1850.0
-margin_bottom = 1040.0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1070.0
+margin_top = -500.0
+margin_right = -69.9985
+margin_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color( 0.713726, 0.858824, 0.843137, 1 )
@@ -456,7 +460,7 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-text = "Передай другому!"
+text = "RESET / ЗАНОВО"
 
 [node name="PopupTutorial" parent="." instance=ExtResource( 8 )]
 
