@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/prefabs/slot/ItemDragPreview.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/prefabs/Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://styles/MergeGameFieldFilledStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://scripts/Classes/Slot.gd" type="Script" id=4]
+
+[node name="Slot" type="Panel"]
+margin_right = 165.0
+margin_bottom = 165.0
+rect_min_size = Vector2( 165, 165 )
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 4 )
+ItemObject = ExtResource( 2 )
+ItemDragPreview = ExtResource( 1 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resourses/features/feature_1.tres" type="Resource" id=1]
+[ext_resource path="res://resourses/blueprints/blueprint_1.tres" type="Resource" id=2]
+[ext_resource path="res://scripts/Classes/Drop.gd" type="Script" id=3]
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+blueprint_to_drop = ExtResource( 2 )
+feautre_to_drop = ExtResource( 1 )

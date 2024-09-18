@@ -1,0 +1,1 @@
+class_name OrderGenerator extends Node2D

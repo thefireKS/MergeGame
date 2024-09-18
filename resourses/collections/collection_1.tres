@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resourses/blueprints/blueprint_1.tres" type="Resource" id=1]
+[ext_resource path="res://scripts/Classes/Collection.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+cars = [  ]
+required_blueprint = ExtResource( 1 )
+required_blueprint_count = 5
+number = 1

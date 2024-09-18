@@ -14,10 +14,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://ar-engine-sdk/application.gd"
 }, {
+"base": "Node",
+"class": "Blueprint",
+"language": "GDScript",
+"path": "res://scripts/Classes/Blueprint.gd"
+}, {
+"base": "Node",
+"class": "Car",
+"language": "GDScript",
+"path": "res://scripts/Classes/Car.gd"
+}, {
+"base": "Node",
+"class": "Collection",
+"language": "GDScript",
+"path": "res://scripts/Classes/Collection.gd"
+}, {
+"base": "Node",
+"class": "Drop",
+"language": "GDScript",
+"path": "res://scripts/Classes/Drop.gd"
+}, {
+"base": "Node",
+"class": "Feature",
+"language": "GDScript",
+"path": "res://scripts/Classes/Feature.gd"
+}, {
 "base": "TextureRect",
 "class": "Item",
 "language": "GDScript",
-"path": "res://scripts/Item.gd"
+"path": "res://scripts/Classes/Item.gd"
 }, {
 "base": "Resource",
 "class": "MergeableItemData",
@@ -34,10 +59,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item_data/OrderElementData.gd"
 }, {
+"base": "Reference",
+"class": "OrderGenerator",
+"language": "GDScript",
+"path": "res://scripts/Managers/OrderGenerator.gd"
+}, {
 "base": "Panel",
 "class": "SlotClass",
 "language": "GDScript",
-"path": "res://scripts/Slot.gd"
+"path": "res://scripts/Classes/Slot.gd"
 }, {
 "base": "Node",
 "class": "Utils",
@@ -51,10 +81,16 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Application": "",
+"Blueprint": "",
+"Car": "",
+"Collection": "",
+"Drop": "",
+"Feature": "",
 "Item": "",
 "MergeableItemData": "",
 "OrderData": "",
 "OrderElementData": "",
+"OrderGenerator": "",
 "SlotClass": "",
 "Utils": "",
 "WebSocket": ""
@@ -63,19 +99,20 @@ _global_script_class_icons={
 [application]
 
 config/name="MergeGame"
-run/main_scene="res://scenes/MergeGameField.tscn"
+run/main_scene="res://scenes/Town.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-GridObserver="*res://scripts/GridObserver.gd"
+G="*res://ar-engine-sdk/global.gd"
+IC="*res://ar-engine-sdk/input_controller.gd"
+WS="*res://ar-engine-sdk/websocket.gd"
+GridObserver="*res://scripts/Managers/GridObserver.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=960
-window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
