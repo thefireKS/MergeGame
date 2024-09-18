@@ -25,9 +25,14 @@ _global_script_classes=[ {
 "path": "res://item_data/MergeableItemData.gd"
 }, {
 "base": "Resource",
-"class": "OrderItemData",
+"class": "OrderData",
 "language": "GDScript",
-"path": "res://item_data/OrderItemData.gd"
+"path": "res://item_data/OrderData.gd"
+}, {
+"base": "Resource",
+"class": "OrderElementData",
+"language": "GDScript",
+"path": "res://item_data/OrderElementData.gd"
 }, {
 "base": "Panel",
 "class": "SlotClass",
@@ -48,7 +53,8 @@ _global_script_class_icons={
 "Application": "",
 "Item": "",
 "MergeableItemData": "",
-"OrderItemData": "",
+"OrderData": "",
+"OrderElementData": "",
 "SlotClass": "",
 "Utils": "",
 "WebSocket": ""
@@ -57,20 +63,19 @@ _global_script_class_icons={
 [application]
 
 config/name="MergeGame"
-run/main_scene="res://scenes/Town.tscn"
+run/main_scene="res://scenes/MergeGameField.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-G="*res://ar-engine-sdk/global.gd"
-IC="*res://ar-engine-sdk/input_controller.gd"
-WS="*res://ar-engine-sdk/websocket.gd"
 GridObserver="*res://scripts/GridObserver.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=960
+window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

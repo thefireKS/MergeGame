@@ -11,11 +11,11 @@ func _ready():
 	for order in order_data.order:
 		var ord_ico = order_icon.instance()
 		icons.add_child(ord_ico)
-		ord_ico.set_order_icon(order.get_sprite(order_data.order[order]))
+		ord_ico.set_order_icon(order.item.get_sprite(order.tier))
 		
 		var list_ord = ListedOrder.new()
-		list_ord.item_data = order
-		list_ord.item_tier = order_data.order[order]
+		list_ord.item_data = order.item
+		list_ord.item_tier = order.tier
 		list_ord.on_field = false
 		
 		listed_order_array.push_back(list_ord)
@@ -24,14 +24,20 @@ func _ready():
 
 func update_order_state(item_res: Resource, tier: int, scene: Item):
 	for order in listed_order_array:
+		if order.item_scene == scene:
+			return
+	
+	for order in listed_order_array:
 		if order.item_data == item_res && order.item_tier == tier && !order.on_field:
 			order.on_field = true
 			order.item_scene = scene
+			print(str(order) + "now on field")
+			break
 
 func check_for_complete() -> bool:
 	var on_field_count = 0
 	for order in listed_order_array:
-		if !order.item_scene == null:
+		if order.item_scene != null:
 			if order.item_tier != order.item_scene.tier:
 				order.on_field = false
 				order.item_scene = null
@@ -55,7 +61,7 @@ func complete_order():
 		return
 	
 	for order in listed_order_array:
-		print(str(order.item_data) + " " + str(order.item_scene))
+		print(str(order.item_data) + " " + str(order.item_scene) + "got reset")
 		order.item_scene.get_parent().reset()
 		order.item_scene = null
 		order.on_field = false

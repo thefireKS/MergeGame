@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "pencilpack"
+name = "Pencilpack"
 is_generator = false
 sprites = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 items_to_generate = [  ]
