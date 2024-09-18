@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item_data/MergeableItemData.gd"
 }, {
-"base": "Resource",
-"class": "OrderItemData",
-"language": "GDScript",
-"path": "res://item_data/OrderItemData.gd"
-}, {
 "base": "Panel",
 "class": "SlotClass",
 "language": "GDScript",
@@ -48,10 +43,14 @@ _global_script_class_icons={
 "Application": "",
 "Item": "",
 "MergeableItemData": "",
+<<<<<<< Updated upstream
 "OrderItemData": "",
 "SlotClass": "",
 "Utils": "",
 "WebSocket": ""
+=======
+"SlotClass": ""
+>>>>>>> Stashed changes
 }
 
 [application]
@@ -65,14 +64,25 @@ config/icon="res://icon.png"
 G="*res://ar-engine-sdk/global.gd"
 IC="*res://ar-engine-sdk/input_controller.gd"
 WS="*res://ar-engine-sdk/websocket.gd"
+<<<<<<< Updated upstream
 GridObserver="*res://scripts/GridObserver.gd"
+=======
+>>>>>>> Stashed changes
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+<<<<<<< Updated upstream
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+=======
+window/size/resizable=false
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+>>>>>>> Stashed changes
 
 [input]
 
