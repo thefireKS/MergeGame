@@ -20,36 +20,29 @@ func _ready():
 		
 		listed_order_array.push_back(list_ord)
 		
-	GridObserver.connect("check_order",self,"update_order_state")
+	GridObserver.connect("check_order",self,"on_check_order")
+
+func on_check_order(item_res: Resource, tier: int, scene: Item):
+	update_order_state(item_res,tier,scene)
 
 func update_order_state(item_res: Resource, tier: int, scene: Item):
 	for order in listed_order_array:
-		if order.item_scene == scene:
-			return
-	
-	for order in listed_order_array:
-		if order.item_data == item_res && order.item_tier == tier && !order.on_field:
-			order.on_field = true
-			order.item_scene = scene
-			print(str(order) + "now on field")
-			break
+		if order.item_scene != scene:
+			if order.item_data == item_res && order.item_tier == tier && !order.on_field:
+				order.on_field = true
+				order.item_scene = scene
+				print(str(order) + "now on field")
+				break
 
 func check_for_complete() -> bool:
 	var on_field_count = 0
 	for order in listed_order_array:
 		if order.item_scene != null:
-			if order.item_tier != order.item_scene.tier:
-				order.on_field = false
-				order.item_scene = null
-			if order.on_field && order.item_tier != order.item_scene.tier:
-				order.on_field = false
-				order.item_scene = null
 			if order.on_field && order.item_tier == order.item_scene.tier:
 				on_field_count += 1
 		else:
 			order.on_field = false
-		
-		print(str(order.item_scene) + " " + str(order.on_field))
+
 	
 	if on_field_count == listed_order_array.size():
 		return true
@@ -62,7 +55,7 @@ func complete_order():
 	
 	for order in listed_order_array:
 		print(str(order.item_data) + " " + str(order.item_scene) + "got reset")
-		order.item_scene.get_parent().reset()
+		order.item_scene.reset()
 		order.item_scene = null
 		order.on_field = false
 	

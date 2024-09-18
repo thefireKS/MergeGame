@@ -49,6 +49,8 @@ func refresh():
 	GridObserver.send_item_to_order(item_data, tier, self)
 #	$Label.text = str(tier)
 
+func reset():
+	queue_free()
 
 func upgrade_tier():
 	if tier < item_data.sprites.size():

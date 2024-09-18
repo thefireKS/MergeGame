@@ -47,7 +47,7 @@ func load_field_json():
 	var content = JSON.parse(file.get_as_text()).result
 	file.close()
 	for game_slot in game_slots.get_children():
-		game_slot.reset()
+		game_slot.clear()
 	
 	for game_slot in game_slots.get_children():
 		if content.has(game_slot.name):
