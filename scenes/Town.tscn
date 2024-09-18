@@ -170,20 +170,18 @@ current = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LeftButton" type="TextureButton" parent="CanvasLayer"]
-visible = false
-margin_left = 39.0
-margin_top = 400.0
-margin_right = 79.0
-margin_bottom = 440.0
+margin_left = 53.0
+margin_top = 540.0
+margin_right = 246.0
+margin_bottom = 733.0
 texture_normal = ExtResource( 4 )
 expand = true
 
 [node name="RightButton" type="TextureButton" parent="CanvasLayer"]
-visible = false
 margin_left = 1874.0
-margin_top = 450.0
-margin_right = 1914.0
-margin_bottom = 490.0
+margin_top = 672.0
+margin_right = 2046.0
+margin_bottom = 844.0
 rect_rotation = 180.0
 texture_normal = ExtResource( 4 )
 expand = true
