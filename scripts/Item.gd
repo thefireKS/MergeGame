@@ -10,6 +10,15 @@ var last_event
 
 func _ready():
 	randomize()
+	
+	if item_data == null:
+		return
+	
+	if item_data.is_generator:
+		for child in get_children():
+			if child.get_class() == "Timer":
+				timer = child
+				timer.connect("timeout",self,"finger_released")
 #	if randi() % 2 == 0:
 #		item_data = load("res://items/test_item_1.tres")#.duplicate()
 ##		item_data.set_meta("path", "res://items/test_item_1.tres")
@@ -29,18 +38,13 @@ func _ready():
 
 
 func refresh():
-	if !item_data.is_generator:
-		var prt = find_node("Particles")
-		if prt:
-			prt.queue_free()
-	
 	if item_data.is_generator && timer == null:
 		timer = Timer.new()
+		timer.name = "Timer"
 		add_child(timer)
 		timer.wait_time = 0.15
 		timer.one_shot = true
 		timer.connect("timeout",self,"finger_released")
-	
 		var generator_particles = particles.instance()
 		add_child(generator_particles)
 	
@@ -49,7 +53,8 @@ func refresh():
 	GridObserver.send_item_to_order(item_data, tier, self)
 #	$Label.text = str(tier)
 
-func reset():
+func reset(parent_container) -> void:
+	parent_container.clear()
 	queue_free()
 
 func upgrade_tier():
@@ -82,3 +87,4 @@ func finger_released():
 		if last_event.pressed == false:
 			GridObserver.send_item_to_grid(item_data.items_to_generate[randi() % item_data.items_to_generate.size()])
 			last_event = null
+			
