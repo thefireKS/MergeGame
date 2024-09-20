@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource( 1 )
-item = ExtResource( 2 )
+item_data = ExtResource( 2 )
 tier = 5

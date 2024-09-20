@@ -1,7 +1,7 @@
 extends Resource
 class_name OrderElementData
 
-export var item : Resource
+export var item_data : Resource
 export var tier : int
 
 

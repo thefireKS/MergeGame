@@ -14,6 +14,8 @@ func _ready():
 	if item_data == null:
 		return
 	
+#	GridObserver.send_item_to_observer(self)
+	
 	if item_data.is_generator:
 		for child in get_children():
 			if child.get_class() == "Timer":
@@ -50,10 +52,11 @@ func refresh():
 	
 	texture = item_data.get_sprite(tier)
 	
-	GridObserver.send_item_to_order(item_data, tier, self)
+	GridObserver.send_item_to_observer(self)
 #	$Label.text = str(tier)
 
 func reset(parent_container) -> void:
+	GridObserver.remove_item_from_observer(self)
 	parent_container.clear()
 	queue_free()
 
