@@ -9,23 +9,26 @@ onready var icons = $HBoxContainer
 #var listed_order_array = []
 
 func _ready():
-	for order in order_data.order:
-		var ord_ico = order_icon.instance()
-		icons.add_child(ord_ico)
-		ord_ico.set_order_icon(order.item_data.get_sprite(order.tier))
-		
+	randomize()
+	read_order_data()
 #		var lo_e = ListedOrderElement.new()
 #		lo_e.item_data = order.item
 #		lo_e.item_tier = order.tier
 ##		lo_e.on_field = false
 #
 #		listed_order_array.push_back(lo_e)
-		
 #	GridObserver.connect("check_order",self,"on_check_order")
 
 #func on_check_order(item_res: Resource, tier: int, scene: Item):
 #	update_order_state(item_res,tier,scene)
-
+func read_order_data():
+	if order_data is RandomOrderData:
+		order_data.generate_order()
+	print(order_data.order.size())
+	for order in order_data.order:
+		var ord_ico = order_icon.instance()
+		icons.add_child(ord_ico)
+		ord_ico.set_order_icon(order.item_data.get_sprite(order.tier))
 #func update_order_state(item_res: Resource, tier: int, scene: Item):
 #	for order in listed_order_array:
 #		if order.item_scene != scene:

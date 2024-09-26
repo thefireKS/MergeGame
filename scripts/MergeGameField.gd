@@ -69,7 +69,8 @@ func instantiate_item_on_empty_slot(item):
 		if game_slot.get_item_data() == null:
 			empty_slot_list.push_back(game_slot)
 	
-	empty_slot_list[randi() % empty_slot_list.size()].instantiate_new_item(item)
+	if !empty_slot_list.empty():
+		empty_slot_list[randi() % empty_slot_list.size()].instantiate_new_item(item)
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):

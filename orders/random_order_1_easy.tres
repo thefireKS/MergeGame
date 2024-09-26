@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://item_data/RandomOrderData.gd" type="Script" id=1]
+[ext_resource path="res://orders/order_elements/wood_2.tres" type="Resource" id=2]
+[ext_resource path="res://orders/order_elements/pencilpack_3.tres" type="Resource" id=3]
+[ext_resource path="res://orders/order_elements/pencilpack_2.tres" type="Resource" id=4]
+[ext_resource path="res://orders/order_elements/wood_3.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+order = [  ]
+order_size = 2
+order_possible_elements = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ]
