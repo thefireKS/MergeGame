@@ -130,7 +130,7 @@ func instantiate_new_item(data):
 	refresh_style()
 
 func clear():
-	print(self.name + " Clear got called")
+#	print(self.name + " Clear got called")
 	if item != null:
 		item = null
 	refresh_style()
