@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://item_data/OrderData.gd"
 }, {
 "base": "Resource",
+"class": "OrderDataPack",
+"language": "GDScript",
+"path": "res://item_data/OrderDataPack.gd"
+}, {
+"base": "Resource",
 "class": "OrderElementData",
 "language": "GDScript",
 "path": "res://item_data/OrderElementData.gd"
@@ -44,13 +49,8 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item_data/OrderObject.gd"
 }, {
-"base": "OrderData",
-"class": "RandomOrderData",
-"language": "GDScript",
-"path": "res://item_data/RandomOrderData.gd"
-}, {
 "base": "Panel",
-"class": "SlotClass",
+"class": "Slot",
 "language": "GDScript",
 "path": "res://scripts/Slot.gd"
 }, {
@@ -69,11 +69,11 @@ _global_script_class_icons={
 "Item": "",
 "MergeableItemData": "",
 "OrderData": "",
+"OrderDataPack": "",
 "OrderElementData": "",
 "OrderList": "",
 "OrderObject": "",
-"RandomOrderData": "",
-"SlotClass": "",
+"Slot": "",
 "Utils": "",
 "WebSocket": ""
 }
