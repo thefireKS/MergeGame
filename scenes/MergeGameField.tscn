@@ -38,6 +38,7 @@ margin_bottom = 3.01999
 order_datapack = ExtResource( 6 )
 
 [node name="OrderList2" parent="." instance=ExtResource( 2 )]
+visible = false
 anchor_left = 0.033
 anchor_top = 0.076
 anchor_right = 0.378
