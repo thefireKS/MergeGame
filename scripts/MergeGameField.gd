@@ -47,7 +47,7 @@ func load_field_json():
 	var content = JSON.parse(file.get_as_text()).result
 	file.close()
 	for game_slot in game_slots.get_children():
-		game_slot.reset()
+		game_slot.clear()
 	
 	for game_slot in game_slots.get_children():
 		if content.has(game_slot.name):
@@ -69,7 +69,8 @@ func instantiate_item_on_empty_slot(item):
 		if game_slot.get_item_data() == null:
 			empty_slot_list.push_back(game_slot)
 	
-	empty_slot_list[randi() % empty_slot_list.size()].instantiate_new_item(item)
+	if !empty_slot_list.empty():
+		empty_slot_list[randi() % empty_slot_list.size()].instantiate_new_item(item)
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
@@ -80,4 +81,5 @@ func _process(delta):
 
 
 func _on_Button_pressed():
+	GridObserver.reload_level()
 	get_tree().reload_current_scene()

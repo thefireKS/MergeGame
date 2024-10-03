@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://item_data/OrderDataPack.gd" type="Script" id=1]
+[ext_resource path="res://orders/order_elements/pencilpack_5.tres" type="Resource" id=2]
+[ext_resource path="res://orders/order_elements/wood_4.tres" type="Resource" id=3]
+[ext_resource path="res://orders/order_elements/wood_5.tres" type="Resource" id=4]
+[ext_resource path="res://orders/order_elements/pencilpack_4.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+count = 2
+possible_elements = [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

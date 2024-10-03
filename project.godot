@@ -24,8 +24,33 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item_data/MergeableItemData.gd"
 }, {
+"base": "Reference",
+"class": "OrderData",
+"language": "GDScript",
+"path": "res://item_data/OrderData.gd"
+}, {
+"base": "Resource",
+"class": "OrderDataPack",
+"language": "GDScript",
+"path": "res://item_data/OrderDataPack.gd"
+}, {
+"base": "Resource",
+"class": "OrderElementData",
+"language": "GDScript",
+"path": "res://item_data/OrderElementData.gd"
+}, {
+"base": "ColorRect",
+"class": "OrderList",
+"language": "GDScript",
+"path": "res://scripts/OrderList.gd"
+}, {
+"base": "Reference",
+"class": "OrderObject",
+"language": "GDScript",
+"path": "res://item_data/OrderObject.gd"
+}, {
 "base": "Panel",
-"class": "SlotClass",
+"class": "Slot",
 "language": "GDScript",
 "path": "res://scripts/Slot.gd"
 }, {
@@ -43,46 +68,33 @@ _global_script_class_icons={
 "Application": "",
 "Item": "",
 "MergeableItemData": "",
-<<<<<<< Updated upstream
-"OrderItemData": "",
-"SlotClass": "",
+"OrderData": "",
+"OrderDataPack": "",
+"OrderElementData": "",
+"OrderList": "",
+"OrderObject": "",
+"Slot": "",
+
 "Utils": "",
 "WebSocket": ""
-=======
-"SlotClass": ""
->>>>>>> Stashed changes
 }
 
 [application]
 
 config/name="MergeGame"
-run/main_scene="res://scenes/Town.tscn"
+run/main_scene="res://scenes/MergeGameField.tscn"
 config/icon="res://icon.png"
 
 [autoload]
-
-G="*res://ar-engine-sdk/global.gd"
-IC="*res://ar-engine-sdk/input_controller.gd"
-WS="*res://ar-engine-sdk/websocket.gd"
-<<<<<<< Updated upstream
 GridObserver="*res://scripts/GridObserver.gd"
-=======
->>>>>>> Stashed changes
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-<<<<<<< Updated upstream
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-=======
-window/size/resizable=false
 
-[gui]
-
-common/drop_mouse_on_gui_input_disabled=true
->>>>>>> Stashed changes
 
 [input]
 
@@ -110,6 +122,10 @@ interact={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [physics]
 

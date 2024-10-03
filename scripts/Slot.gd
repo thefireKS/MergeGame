@@ -1,5 +1,5 @@
 extends Panel
-class_name SlotClass
+class_name Slot
 
 export var ItemObject: PackedScene
 export var ItemDragPreview: PackedScene
@@ -60,7 +60,7 @@ func can_drop_data(position: Vector2, data) -> bool:
 # Godot provides this.
 func drop_data(position: Vector2, data) -> void:
 	var dropped_item: Item = data["item"]
-	var dropped_item_parent: SlotClass = dropped_item.get_parent() # The Slot
+	var dropped_item_parent: Slot = dropped_item.get_parent() # The Slot
 	# If dropped slot is same as current, don't do anything
 	if dropped_item_parent == self:
 		return
@@ -72,29 +72,41 @@ func drop_data(position: Vector2, data) -> void:
 			# Upgrade the tier
 			item.upgrade_tier()
 			# Remove the child from the the slot it dropped on this one and reset it.
-			dropped_item_parent.reset()
+			dropped_item.reset(dropped_item_parent)
 		# If it's not same, swap it or place it.
 		else:
 			# Remove the current slot's item
-			remove_child(item)
+			var swap_drop_item = dropped_item.duplicate()
+			var swap_inner_item = item.duplicate()
+			
+			item.reset(self)
+			print("reset item itself")
+			dropped_item.reset(dropped_item_parent)
+			print("reset other item")
 			# Remove the dropped slot's item
-			dropped_item_parent.remove_child(dropped_item)
 			# Add the current slot's item that we removed on line 55
-			dropped_item_parent.add_child(item)
+			dropped_item_parent.item = swap_inner_item
+			dropped_item_parent.add_child(swap_inner_item)
+			dropped_item_parent.refresh_item_tier()
+			print("added other item copy")
 			# Set the dropped slot to current slot's item
-			dropped_item_parent.item = item
+			
 			# Add the dropped slot's item to current slot
-			add_child(dropped_item)
+			item = swap_drop_item
+			add_child(swap_drop_item)
+			refresh_item_tier()
+			print("added item copy")
 			# Set the current slot to dropped slot's item
-			item = dropped_item
 	# If current slot's item is null, then
 	else:
 		# Reset dropped slot's item and remove it.
-		dropped_item_parent.reset()
 		# Add the dropped slot's removed item to current slot
-		add_child(dropped_item)
+		var fresh_item = dropped_item.duplicate()
+		add_child(fresh_item)
 		# Set it
-		item = dropped_item
+		item = fresh_item
+		
+		dropped_item.reset(dropped_item_parent)
 	
 	# Refresh the styles
 	dropped_item_parent.refresh_style()
@@ -117,12 +129,10 @@ func instantiate_new_item(data):
 	item.refresh()
 	refresh_style()
 
-# This is just repeated above in logic, so made it into function.
-func reset() -> void:
-	if get_child_count() > 0:
-		remove_child(item)
+func clear():
+#	print(self.name + " Clear got called")
+	if item != null:
 		item = null
 	refresh_style()
 
-#func get_slot_item() -> Item:
-#	return item
+
