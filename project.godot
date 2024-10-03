@@ -74,6 +74,7 @@ _global_script_class_icons={
 "OrderList": "",
 "OrderObject": "",
 "Slot": "",
+
 "Utils": "",
 "WebSocket": ""
 }
@@ -85,17 +86,15 @@ run/main_scene="res://scenes/MergeGameField.tscn"
 config/icon="res://icon.png"
 
 [autoload]
-
 GridObserver="*res://scripts/GridObserver.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=960
-window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
 
 [input]
 
