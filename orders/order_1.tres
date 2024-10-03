@@ -7,4 +7,4 @@
 [resource]
 script = ExtResource( 1 )
 count = -1
-possible_elements = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ) ]
+possible_elements = [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ) ]

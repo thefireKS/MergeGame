@@ -1,14 +1,15 @@
 extends Reference
 class_name OrderData
 
-export var order : Array
+export var data : Array
 
-func generate(data : OrderDataPack):
-	order.clear()
-	if data.count <= 0:
-		order = data.possible_elements.duplicate()
+
+func generate(datapack : OrderDataPack):
+	data.clear()
+	if datapack.count <= 0:
+		data = datapack.possible_elements.duplicate()
 		return
-	for n in data.count:
-		var rnd = randi() % data.possible_elements.size()
-		order.push_back(data.possible_elements[rnd])
+	for n in datapack.count:
+		var rnd = randi() % datapack.possible_elements.size()
+		data.push_back(datapack.possible_elements[rnd])
 

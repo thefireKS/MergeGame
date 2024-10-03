@@ -1,11 +1,12 @@
 extends ColorRect
 class_name OrderList
 
-export var order_data : Resource
+export var order_datapack : Resource
 export var order_icon : PackedScene
 #onready var slots_grid = $"%GridContainer"
 onready var icons = $HBoxContainer
 
+var order : OrderData
 #var listed_order_array = []
 
 func _ready():
@@ -21,14 +22,17 @@ func _ready():
 
 #func on_check_order(item_res: Resource, tier: int, scene: Item):
 #	update_order_state(item_res,tier,scene)
+
+
 func read_order_data():
-	if order_data is RandomOrderData:
-		order_data.generate_order()
-	print(order_data.order.size())
-	for order in order_data.order:
+	order = OrderData.new()
+	order.generate(order_datapack)
+	for order_element in order.data:
 		var ord_ico = order_icon.instance()
 		icons.add_child(ord_ico)
-		ord_ico.set_order_icon(order.item_data.get_sprite(order.tier))
+		ord_ico.set_order_icon(order_element.item_data.get_sprite(order_element.tier))
+
+
 #func update_order_state(item_res: Resource, tier: int, scene: Item):
 #	for order in listed_order_array:
 #		if order.item_scene != scene:
@@ -71,7 +75,7 @@ func complete_order():
 #		slot.refresh_item_tier()
 
 func _on_Button_pressed():
-	GridObserver.check_order(self,order_data)
+	GridObserver.check_order(self,order)
 
 #class ListedOrderElement:
 #	export var item_data : Resource

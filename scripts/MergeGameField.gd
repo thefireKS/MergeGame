@@ -81,4 +81,5 @@ func _process(delta):
 
 
 func _on_Button_pressed():
+	GridObserver.reload_level()
 	get_tree().reload_current_scene()
