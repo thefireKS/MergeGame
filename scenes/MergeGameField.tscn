@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/GridFillerV.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui/OrderList.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://orders/random_order_1_easy.tres" type="Resource" id=6]
 [ext_resource path="res://Atom-Medium.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/ui/PopupTutorial.tscn" type="PackedScene" id=8]
-[ext_resource path="res://orders/order_1.tres" type="Resource" id=9]
+[ext_resource path="res://orders/random_order_3_hard.tres" type="Resource" id=9]
+[ext_resource path="res://orders/random_order_2_medium.tres" type="Resource" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
@@ -32,21 +33,29 @@ anchor_top = 0.076
 anchor_right = 0.378
 anchor_bottom = 0.261
 margin_left = 0.639999
-margin_top = 2.92001
+margin_top = -52.08
 margin_right = 0.440002
-margin_bottom = 3.01999
+margin_bottom = -51.98
 order_datapack = ExtResource( 6 )
 
 [node name="OrderList2" parent="." instance=ExtResource( 2 )]
-visible = false
 anchor_left = 0.033
 anchor_top = 0.076
 anchor_right = 0.378
 anchor_bottom = 0.261
 margin_left = 0.639999
-margin_top = 317.92
+margin_top = 262.92
 margin_right = 0.440002
-margin_bottom = 318.02
+margin_bottom = 263.02
+color = Color( 0.4, 0.686275, 0.368627, 1 )
+order_datapack = ExtResource( 10 )
+
+[node name="OrderList3" parent="." instance=ExtResource( 2 )]
+margin_left = 64.0
+margin_top = 660.0
+margin_right = 65.72
+margin_bottom = 540.22
+color = Color( 0.929412, 0.709804, 0.329412, 1 )
 order_datapack = ExtResource( 9 )
 
 [node name="GameField" type="ColorRect" parent="."]
@@ -451,9 +460,9 @@ margin_bottom = 905.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 64.0
-margin_top = 329.0
+margin_top = 427.0
 margin_right = 726.0
-margin_bottom = 469.0
+margin_bottom = 519.0
 rect_min_size = Vector2( 80, 40 )
 custom_colors/font_color_disabled = Color( 0.164706, 0.407843, 0.521569, 1 )
 custom_colors/font_color_focus = Color( 0.164706, 0.407843, 0.521569, 1 )
