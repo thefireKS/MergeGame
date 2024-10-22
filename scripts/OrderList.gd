@@ -1,10 +1,10 @@
-extends ColorRect
+extends Control
 class_name OrderList
 
 export var order_datapack : Resource
 export var order_icon : PackedScene
 #onready var slots_grid = $"%GridContainer"
-onready var icons = $HBoxContainer
+onready var icons = $OrderItems
 
 var order : OrderData
 #var listed_order_array = []
@@ -12,17 +12,6 @@ var order : OrderData
 func _ready():
 	randomize()
 	read_order_data()
-#		var lo_e = ListedOrderElement.new()
-#		lo_e.item_data = order.item
-#		lo_e.item_tier = order.tier
-##		lo_e.on_field = false
-#
-#		listed_order_array.push_back(lo_e)
-#	GridObserver.connect("check_order",self,"on_check_order")
-
-#func on_check_order(item_res: Resource, tier: int, scene: Item):
-#	update_order_state(item_res,tier,scene)
-
 
 func read_order_data():
 	order = OrderData.new()
@@ -31,8 +20,20 @@ func read_order_data():
 		var ord_ico = order_icon.instance()
 		icons.add_child(ord_ico)
 		ord_ico.set_order_icon(order_element.item_data.get_sprite(order_element.tier))
+	set_order_list_size()
 
-
+func set_order_list_size():
+	var numberof_items = order.data.size()
+	match numberof_items:
+		1:
+			rect_size.x = 715
+		2:
+			rect_size.x = 904
+		3:
+			rect_size.x = 1032
+		_:
+			rect_size.x = 715
+	print(rect_size.x)
 #func update_order_state(item_res: Resource, tier: int, scene: Item):
 #	for order in listed_order_array:
 #		if order.item_scene != scene:

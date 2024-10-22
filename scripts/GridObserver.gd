@@ -1,6 +1,7 @@
 extends Node
 
 signal send_item (item)
+signal item_was_merged
 #signal check_order (item, tier)
 
 var items_on_grid = []
@@ -9,6 +10,7 @@ func send_item_to_grid(item: Resource):
 	emit_signal("send_item", item)
 
 func send_item_to_observer(item_scene: Item):
+	emit_signal("item_was_merged")
 	items_on_grid.push_back(item_scene)
 	items_on_grid = make_array_unique(items_on_grid)
 

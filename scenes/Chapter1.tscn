@@ -1,0 +1,327 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://sprites/NovelElements/Oleg.png" type="Texture" id=1]
+[ext_resource path="res://sprites/NovelElements/CityBG.png" type="Texture" id=2]
+[ext_resource path="res://sprites/NovelElements/SkipButton.png" type="Texture" id=3]
+[ext_resource path="res://sprites/NovelElements/DialogBG.png" type="Texture" id=4]
+[ext_resource path="res://sprites/NovelElements/StartBG.png" type="Texture" id=5]
+[ext_resource path="res://fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://sprites/NovelElements/EndButton.png" type="Texture" id=7]
+[ext_resource path="res://sprites/NovelElements/FilledQuestMark.png" type="Texture" id=8]
+[ext_resource path="res://sprites/NovelElements/EnigneerHouse.png" type="Texture" id=9]
+[ext_resource path="res://sprites/NovelElements/QuestBG.png" type="Texture" id=10]
+[ext_resource path="res://sprites/NovelElements/AssembleLine_Locked.png" type="Texture" id=11]
+[ext_resource path="res://scripts/Novel/Chapter1.gd" type="Script" id=12]
+[ext_resource path="res://sprites/NovelElements/SkipButton_Pressed.png" type="Texture" id=13]
+[ext_resource path="res://sprites/NovelElements/EndButton_Pressed.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 96
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 6 )
+
+[node name="Chapter1" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+
+[node name="F1" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+
+[node name="Text" type="Label" parent="F1"]
+margin_left = 464.0
+margin_top = 512.0
+margin_right = 1456.0
+margin_bottom = 659.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "начать игру"
+align = 1
+valign = 1
+
+[node name="StartButton" type="TextureButton" parent="F1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="F2" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Text" type="Label" parent="F2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -496.0
+margin_top = -83.0
+margin_right = 496.0
+margin_bottom = 209.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Меня видно? Точно? Я твой помощник - Артем. Наш город называется Атомск и здесь нас ждут великие дела. То есть, тебя, ждут великие дела, но всегда приятно причислить себя к тому, к чему руку не прикладывал."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SkipButton" type="TextureButton" parent="F2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -214.0
+margin_top = 161.0
+margin_right = 170.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 13 )
+
+[node name="Character" type="TextureRect" parent="F2"]
+margin_left = 231.0
+margin_top = 121.0
+margin_right = 538.0
+margin_bottom = 474.0
+texture = ExtResource( 1 )
+
+[node name="NextButton" type="TextureButton" parent="F2"]
+anchor_top = 0.326
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0800171
+
+[node name="F3" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Text" type="Label" parent="F3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -496.0
+margin_top = -83.0
+margin_right = 496.0
+margin_bottom = 209.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Мы должны поднять нашу автомобильную промышленность. Для этого необходимо восстановить сборочную линию."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SkipButton" type="TextureButton" parent="F3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -214.0
+margin_top = 161.0
+margin_right = 170.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 13 )
+
+[node name="Character" type="TextureRect" parent="F3"]
+margin_left = 231.0
+margin_top = 121.0
+margin_right = 538.0
+margin_bottom = 474.0
+texture = ExtResource( 1 )
+
+[node name="NextButton" type="TextureButton" parent="F3"]
+anchor_top = 0.326
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0800171
+
+[node name="F4" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+
+[node name="Text" type="Label" parent="F4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -571.0
+margin_top = 128.0
+margin_right = 572.0
+margin_bottom = 275.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Восстанови этот домик"
+align = 1
+valign = 1
+
+[node name="NextButton" type="TextureButton" parent="F4"]
+margin_left = 933.0
+margin_top = 155.0
+margin_right = 1294.0
+margin_bottom = 395.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 11 )
+
+[node name="EngineerHouse" type="TextureRect" parent="F4"]
+margin_left = 648.0
+margin_top = 93.0
+margin_right = 876.0
+margin_bottom = 399.0
+texture = ExtResource( 9 )
+
+[node name="F5" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Text" type="Label" parent="F5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -496.0
+margin_top = -83.0
+margin_right = 496.0
+margin_bottom = 209.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Не верю... что вы так быстро управились. Мне казалось, что это просто невозможно. Ладно, на самом деле это лишь начало нашего пути."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SkipButton" type="TextureButton" parent="F5"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -214.0
+margin_top = 161.0
+margin_right = 170.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 13 )
+
+[node name="Character" type="TextureRect" parent="F5"]
+margin_left = 231.0
+margin_top = 121.0
+margin_right = 538.0
+margin_bottom = 474.0
+texture = ExtResource( 1 )
+
+[node name="NextButton" type="TextureButton" parent="F5"]
+anchor_top = 0.326
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0800171
+
+[node name="F6" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+
+[node name="ChapterName" type="Label" parent="F6"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -217.0
+margin_top = 229.0
+margin_right = 217.0
+margin_bottom = 376.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Глава 1"
+align = 1
+valign = 1
+
+[node name="QuestList" type="VBoxContainer" parent="F6"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -487.0
+margin_top = -137.0
+margin_right = 401.0
+margin_bottom = 163.0
+
+[node name="Quest1" type="Control" parent="F6/QuestList"]
+margin_right = 888.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="F6/QuestList/Quest1"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 35
+
+[node name="QuestStatus" type="TextureRect" parent="F6/QuestList/Quest1/HBoxContainer"]
+margin_right = 116.0
+margin_bottom = 103.0
+texture = ExtResource( 8 )
+
+[node name="QuestName" type="Label" parent="F6/QuestList/Quest1/HBoxContainer"]
+margin_left = 151.0
+margin_top = 23.0
+margin_right = 785.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Восстановить сборочную линию"
+align = 1
+valign = 1
+
+[node name="EndButton" type="TextureButton" parent="F6"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = 215.0
+margin_right = 361.0
+margin_bottom = 314.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 14 )
+
+[connection signal="pressed" from="F1/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="F2/SkipButton" to="." method="_on_SkipButton_pressed"]
+[connection signal="pressed" from="F2/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="F3/SkipButton" to="." method="_on_SkipButton_pressed"]
+[connection signal="pressed" from="F3/NextButton" to="." method="_on_NextButtonF3_pressed"]
+[connection signal="pressed" from="F4/NextButton" to="." method="_on_NextButtonF4_pressed"]
+[connection signal="pressed" from="F5/SkipButton" to="." method="_on_SkipButtonF5_pressed"]
+[connection signal="pressed" from="F5/NextButton" to="." method="_on_NextButtonF5_pressed"]
+[connection signal="pressed" from="F6/EndButton" to="." method="_on_EndButton_pressed"]

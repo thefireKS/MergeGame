@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex"
+path="res://.import/OrderArrows.png-0ab98b3ebd60eb2f0d5e4fed1a1a0bfd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridElementEmpty.png"
-dest_files=[ "res://.import/GridElementEmpty.png-4654ceeb7daf8a8769af81635f3bf6fe.stex" ]
+source_file="res://sprites/NovelElements/OrderArrows.png"
+dest_files=[ "res://.import/OrderArrows.png-0ab98b3ebd60eb2f0d5e4fed1a1a0bfd.stex" ]
 
 [params]
 

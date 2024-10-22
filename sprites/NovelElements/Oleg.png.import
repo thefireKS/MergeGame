@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridFillerH.png-77599cf58ed802ecea7f7248a5797598.stex"
+path="res://.import/Oleg.png-46903dcf460959be80575d8f391adce8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridFillerH.png"
-dest_files=[ "res://.import/GridFillerH.png-77599cf58ed802ecea7f7248a5797598.stex" ]
+source_file="res://sprites/NovelElements/Oleg.png"
+dest_files=[ "res://.import/Oleg.png-46903dcf460959be80575d8f391adce8.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GridElement.png-94e8182d60f36f1dc7b4fa06cdc7faa1.stex"
+path="res://.import/QuestBG.png-231e771466336c45c55c87e5cf390f3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GridElement.png"
-dest_files=[ "res://.import/GridElement.png-94e8182d60f36f1dc7b4fa06cdc7faa1.stex" ]
+source_file="res://sprites/NovelElements/QuestBG.png"
+dest_files=[ "res://.import/QuestBG.png-231e771466336c45c55c87e5cf390f3b.stex" ]
 
 [params]
 

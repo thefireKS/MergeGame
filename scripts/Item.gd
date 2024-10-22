@@ -90,4 +90,3 @@ func finger_released():
 		if last_event.pressed == false:
 			GridObserver.send_item_to_grid(item_data.items_to_generate[randi() % item_data.items_to_generate.size()])
 			last_event = null
-			
