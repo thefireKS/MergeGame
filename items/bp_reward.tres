@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/rewards/BP_common_c1.svg" type="Texture" id=1]
+[ext_resource path="res://item_data/MergeableItemData.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+name = "BP_collection1"
+is_generator = false
+sprites = [ ExtResource( 1 ) ]
+items_to_generate = [  ]

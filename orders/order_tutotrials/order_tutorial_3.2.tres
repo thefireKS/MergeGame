@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://item_data/OrderDataPack.gd" type="Script" id=1]
+[ext_resource path="res://orders/order_elements/wood_4.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+count = -1
+possible_elements = [ ExtResource( 2 ) ]
+coins_amount = 25
+has_reward = false
+reward_count = 0
+possible_rewards = [  ]

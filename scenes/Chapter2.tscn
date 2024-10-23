@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://sprites/NovelElements/Oleg.png" type="Texture" id=1]
+[ext_resource path="res://sprites/NovelElements/Artyom.png" type="Texture" id=1]
 [ext_resource path="res://sprites/NovelElements/SkipButton.png" type="Texture" id=2]
 [ext_resource path="res://sprites/NovelElements/DialogBG.png" type="Texture" id=3]
 [ext_resource path="res://fonts/MPLUSRounded1c/MPLUSRounded1c-Bold.ttf" type="DynamicFontData" id=4]

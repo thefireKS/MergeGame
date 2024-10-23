@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/ui/OrderIcon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/MergeGame/OrderList.gd" type="Script" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://sprites/UI/MergeGame/Order.png" type="Texture" id=6]
 [ext_resource path="res://sprites/UI/MergeGame/OrderButton.png" type="Texture" id=7]
 [ext_resource path="res://sprites/NovelElements/OrderArrows.png" type="Texture" id=8]
+[ext_resource path="res://items/order_characters.tres" type="Resource" id=9]
+[ext_resource path="res://scenes/vfx/CoinParticles.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/vfx/RewardParticles.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sfx/order_completed.mp3" type="AudioStream" id=12]
 
 [node name="OrderList" type="NinePatchRect"]
 margin_right = 1032.0
@@ -23,14 +27,17 @@ script = ExtResource( 2 )
 order_icon = ExtResource( 1 )
 coin_texture = ExtResource( 4 )
 x_size = [ 715, 904, 1032 ]
+order_chars = ExtResource( 9 )
 
 [node name="OrderPersona" type="TextureRect" parent="."]
 margin_left = 114.0
 margin_top = 62.0
 margin_right = 323.0
 margin_bottom = 271.0
+rect_min_size = Vector2( 209, 209 )
 texture = ExtResource( 5 )
-stretch_mode = 3
+expand = true
+stretch_mode = 1
 
 [node name="ArrowsIcon" type="TextureRect" parent="."]
 margin_left = 364.0
@@ -64,5 +71,15 @@ margin_bottom = 397.0
 rect_min_size = Vector2( 80, 40 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 3 )
+
+[node name="CoinParticles" parent="Button" instance=ExtResource( 10 )]
+position = Vector2( 150, 50 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="RewardParticles" parent="Button" instance=ExtResource( 11 )]
+position = Vector2( 150, 50 )
+
+[node name="CompletedAudio" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource( 12 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

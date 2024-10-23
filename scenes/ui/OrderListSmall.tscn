@@ -21,8 +21,6 @@ margin_top = 38.0
 margin_right = 180.0
 margin_bottom = 153.0
 rect_min_size = Vector2( 116, 116 )
-expand = true
-stretch_mode = 1
 
 [node name="ArrowsIcon" parent="." index="1"]
 margin_left = 209.0
@@ -54,3 +52,7 @@ margin_top = 170.0
 margin_right = 211.0
 margin_bottom = 226.0
 expand = true
+
+[node name="CoinParticles" parent="Button" index="0"]
+emitting = false
+one_shot = true

@@ -66,5 +66,6 @@ margin_right = 908.0
 margin_bottom = 482.0
 
 [node name="PopupTutorial" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

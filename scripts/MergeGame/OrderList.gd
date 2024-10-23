@@ -1,13 +1,21 @@
 extends Control
 class_name OrderList
 
+signal order_completed(type)
+
 export var order_datapack : Resource
 export var order_icon : PackedScene
 export var coin_texture : Texture
 export var x_size : Array
+export var order_chars : Resource
 #onready var slots_grid = $"%GridContainer"
 onready var item_icons = $Items
 onready var reward_icons = $Rewards
+onready var order_persona = $OrderPersona
+
+onready var coin_particles : Particles2D = $Button/CoinParticles
+onready var reward_particles : Particles2D = $Button/RewardParticles
+onready var completed_audio = $Button/CompletedAudio
 
 var order : OrderData
 
@@ -35,7 +43,10 @@ func read_order_data():
 		for reward in order.reward_data:
 			var rwd_ico = order_icon.instance()
 			reward_icons.add_child(rwd_ico)
-			#rwd_ico.set_order_icon(reward)
+			rwd_ico.set_order_icon(reward.item_data.get_sprite(1))
+	
+	var rnd = randi() % order_chars.sprites.size()
+	order_persona.texture = order_chars.sprites[rnd]
 	
 	set_order_list_size()
 
@@ -75,6 +86,17 @@ func set_order_list_size():
 #		return false
 
 func complete_order():
+	completed_audio.play()
+	var ord_type = "default"
+	if order.coins_amount > 0:
+		PlayerParametersObserver.coins += order.coins_amount
+		coin_particles.restart()
+		print("emitted coins")
+		ord_type = "coin"
+	if order.reward_data.size() > 0:
+		reward_particles.restart()
+		ord_type = "rare"
+	emit_signal("order_completed",ord_type)
 	print("YAY SOLD")
 #	if !check_for_complete():
 #		return

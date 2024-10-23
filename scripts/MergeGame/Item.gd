@@ -8,6 +8,8 @@ export var tier : int = 0
 var timer
 var last_event
 
+onready var generator_sound = $GeneratorSound
+
 func _ready():
 	randomize()
 	
@@ -90,4 +92,5 @@ func finger_released():
 #		print("InputEventScreenTouch in finger released")
 		if last_event.pressed == false:
 			GridObserver.send_item_to_grid(item_data.items_to_generate[randi() % item_data.items_to_generate.size()])
+			generator_sound.play()
 			last_event = null

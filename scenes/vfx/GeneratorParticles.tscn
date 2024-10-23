@@ -30,7 +30,7 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 5 )
 color_ramp = SubResource( 2 )
 
-[node name="Particles2D" type="Particles2D"]
+[node name="GeneratorParticles" type="Particles2D"]
 position = Vector2( 100, 100 )
 amount = 10
 lifetime = 3.0

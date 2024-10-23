@@ -93,6 +93,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GridObserver="*res://scripts/GridObserver.gd"
+PlayerParametersObserver="*res://scripts/PlayerParametersObserver.gd"
 
 [display]
 
@@ -100,6 +101,8 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/size/fullscreen=true
+window/size/test_width=960
+window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

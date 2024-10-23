@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/generator_sound.mp3-13801464e184c4485a6235a870cdece8.mp3str"
+
+[deps]
+
+source_file="res://sfx/generator_sound.mp3"
+dest_files=[ "res://.import/generator_sound.mp3-13801464e184c4485a6235a870cdece8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

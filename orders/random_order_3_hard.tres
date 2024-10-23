@@ -8,7 +8,7 @@
 script = ExtResource( 1 )
 count = 3
 possible_elements = [ ExtResource( 3 ), ExtResource( 2 ) ]
-coins_amount = 0
+coins_amount = 1
 has_reward = false
 reward_count = 0
 possible_rewards = [  ]
