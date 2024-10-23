@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/merge/GameField.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/OrderList.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://orders/random_order_1_easy.tres" type="Resource" id=6]
 [ext_resource path="res://fonts/Atom-Medium.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/ui/PopupTutorial.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/UI/Coin.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
@@ -38,6 +39,7 @@ margin_top = 559.0
 margin_right = 655.0
 margin_bottom = 816.0
 order_datapack = ExtResource( 5 )
+coin_texture = ExtResource( 9 )
 
 [node name="Button" type="Button" parent="."]
 anchor_top = 0.5

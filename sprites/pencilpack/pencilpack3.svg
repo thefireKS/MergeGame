@@ -1,5 +1,1 @@
-<svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M40.394 66.0028L4.88916 30.498L-4.67398e-06 35.3872L35.5048 70.892L40.394 66.0028Z" fill="#F2CD12"/>
-<path d="M93.341 109.69V83.8091H119.201L35.3921 0L9.49072 25.8945L93.3273 109.731L93.3616 109.69H93.341Z" fill="#0AA06A"/>
-<path d="M119.222 83.8066C112.358 83.8066 105.775 86.5333 100.921 91.3869C96.0678 96.2405 93.3411 102.823 93.3411 109.687H119.222" fill="#FF6000"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" style="fill:none"/><rect x="32.96" y="229.64" width="173.59" height="23.9" transform="translate(205.9 -13.92) rotate(45)" style="fill:#f2cd12"/><polygon points="372.6 445.54 372.6 356.07 462 356.07 172.26 66.33 82.74 155.86 372.54 445.67 372.67 445.54 372.6 445.54" style="fill:#0aa06a"/><path d="M462.07,356.07a89.47,89.47,0,0,0-89.47,89.47h89.47" style="fill:#ff6000"/></svg>

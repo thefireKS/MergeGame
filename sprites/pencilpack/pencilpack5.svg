@@ -1,11 +1,1 @@
-<svg width="97" height="121" viewBox="0 0 97 121" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M97 23.9336H0V120.934H97V23.9336Z" fill="#B2D5DC"/>
-<path d="M82.7545 80.4502C82.6291 69.5588 78.2144 59.1561 70.4683 51.4987C62.7222 43.8413 52.2693 39.5469 41.3773 39.5469C30.4852 39.5469 20.0323 43.8413 12.2862 51.4987C4.5401 59.1561 0.125476 69.5588 0 80.4502H82.7545Z" fill="#3E62DD"/>
-<path d="M26.2944 32.6758L19.2046 45.9437H33.3787L26.2944 32.6758Z" fill="#ED313B"/>
-<path d="M33.3787 98.3636V45.9453H19.2045L19.2045 98.3636H33.3787Z" fill="#FECC00"/>
-<path d="M48.4589 32.6758L41.3691 45.9437H55.5432L48.4589 32.6758Z" fill="#ED313B"/>
-<path d="M55.543 98.3636V45.9453H41.3688V98.3636H55.543Z" fill="#FECC00"/>
-<path d="M97 80.1641H0V120.929H97V80.1641Z" fill="#4F7C89"/>
-<path d="M85.127 0.759766H64.4617V80.1643H85.127V0.759766Z" fill="#FF5A02"/>
-<path d="M96.9287 111.326V102.072H68.0644V111.326H96.9287Z" fill="#ED313B"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" style="fill:none"/><rect x="92.33" y="131.43" width="327.33" height="327.33" style="fill:#b2d5dc"/><path d="M371.59,322.16a139.63,139.63,0,1,0-279.26,0Z" style="fill:#3e62dd"/><polygon points="181.06 160.94 157.15 205.72 204.98 205.72 181.06 160.94" style="fill:#ed313b"/><rect x="92.61" y="270.26" width="176.9" height="47.83" transform="translate(475.23 113.11) rotate(90)" style="fill:#fecc00"/><polygon points="255.86 160.94 231.95 205.72 279.78 205.72 255.86 160.94" style="fill:#ed313b"/><rect x="167.41" y="270.26" width="176.9" height="47.83" transform="translate(550.03 38.31) rotate(90)" style="fill:#fecc00"/><rect x="92.33" y="321.19" width="327.33" height="137.57" style="fill:#4f7c89"/><rect x="309.86" y="53.23" width="69.75" height="267.96" style="fill:#ff5a02"/><rect x="355.11" y="362.03" width="31.23" height="97.4" transform="translate(781.45 40) rotate(90)" style="fill:#ed313b"/></svg>

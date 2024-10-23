@@ -1,7 +1,1 @@
-<svg width="114" height="115" viewBox="0 0 114 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M114 87.1309L26.9043 0.0351562L3.12451e-05 26.9394L87.0958 114.035L114 87.1309Z" fill="#A64321"/>
-<path d="M113.996 87.1329L26.9001 0.0371094L14.2977 12.6395L101.394 99.7353L113.996 87.1329Z" fill="#FF6000"/>
-<path d="M97.3646 103.768L10.2688 16.6719L7.08025 19.8604L94.176 106.956L97.3646 103.768Z" fill="#FF6000"/>
-<path d="M58.8033 5.41211L58.8446 33.5086L44.7798 19.4851L58.8033 5.41211Z" fill="#FF6000"/>
-<path d="M40.5427 94.1369L67.6234 94.1782L54.1037 80.6172L40.5427 94.1369Z" fill="#A64321"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" style="fill:none"/><rect x="16.05" y="181.87" width="479.91" height="148.25" transform="translate(256 -106.04) rotate(45)" style="fill:#a64321"/><rect x="43.91" y="193.41" width="479.91" height="69.44" transform="translate(244.46 -133.9) rotate(45)" style="fill:#ff6000"/><rect x="-2.57" y="265.84" width="479.91" height="17.56" transform="translate(263.71 -87.42) rotate(45)" style="fill:#ff6000"/><polygon points="263.01 54.86 263.18 164.32 208.37 109.68 263.01 54.86" style="fill:#ff6000"/><polygon points="191.86 400.54 297.39 400.7 244.7 347.85 191.86 400.54" style="fill:#a64321"/></svg>

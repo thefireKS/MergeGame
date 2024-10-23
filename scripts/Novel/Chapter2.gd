@@ -123,6 +123,7 @@ func _on_EndButtonFQ_pressed():
 		$FQuest.visible = false
 		return
 	$F13.visible = true
+	$GameField.visible = false
 	$FQuest.visible = false
 
 func _on_item_merge():
@@ -138,3 +139,6 @@ func _on_order_complete():
 		$FQuest/QuestList/Quest2/HBoxContainer/QuestStatus.texture = quest_done_texture
 		if merged_items_amount >= 25:
 			$FQuest.visible = true
+
+func _on_NextButtonF13_pressed():
+	get_tree().change_scene("res://scenes/Chapter3.tscn")

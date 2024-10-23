@@ -1,6 +1,1 @@
-<svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0L6.98856 32.6532L32.6532 6.98856L0 0Z" fill="#3E62DD"/>
-<path d="M115.708 90.0486L48.2437 22.584L22.5789 48.2487L90.0435 115.713L115.708 90.0486Z" fill="#FF6000"/>
-<path d="M42.5941 16.9222L32.6211 6.94922L6.95635 32.614L16.9293 42.5869L42.5941 16.9222Z" fill="#F2CD12"/>
-<path d="M100.116 105.645L66.3816 71.9102L61.3652 76.9265L95.1 110.661L100.116 105.645Z" fill="#F2CD12"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" style="fill:none"/><polygon points="80.33 80.33 101.56 179.48 179.48 101.56 80.33 80.33" style="fill:#3e62dd"/><rect x="145.44" y="235.18" width="289.68" height="110.21" transform="translate(290.28 -120.24) rotate(45)" style="fill:#ff6000"/><rect x="134.14" y="100.44" width="42.81" height="110.21" transform="translate(155.55 -64.43) rotate(45)" style="fill:#f2cd12"/><rect x="253.07" y="346.73" width="144.84" height="21.53" transform="translate(348.12 -125.45) rotate(45)" style="fill:#f2cd12"/></svg>

@@ -1,11 +1,1 @@
-<svg width="103" height="104" viewBox="0 0 103 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.4387 34.4387L0 0H34.4387V34.4387Z" fill="#FECC00"/>
-<path d="M68.8701 34.4387L34.4387 0H68.8701V34.4387Z" fill="#FECC00"/>
-<path d="M103 34.4387L68.5613 0H103V34.4387Z" fill="#FECC00"/>
-<path d="M34.4387 68.8708L0 34.4395H34.4387V68.8708Z" fill="#FECC00"/>
-<path d="M68.8701 68.8708L34.4387 34.4395H68.8701V68.8708Z" fill="#FECC00"/>
-<path d="M103 68.8708L68.5613 34.4395H103V68.8708Z" fill="#FECC00"/>
-<path d="M34.4387 103.308L0 68.8691H34.4387V103.308Z" fill="#FECC00"/>
-<path d="M68.8701 103.308L34.4387 68.8691H68.8701V103.308Z" fill="#FECC00"/>
-<path d="M103 103.308L68.5613 68.8691H103V103.308Z" fill="#FECC00"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" style="fill:none"/><polygon points="191.21 199.27 60.46 68.52 191.21 68.52 191.21 199.27" style="fill:#fecc00"/><polygon points="321.96 199.27 191.21 68.52 321.96 68.52 321.96 199.27" style="fill:#fecc00"/><polygon points="451.54 199.27 320.79 68.52 451.54 68.52 451.54 199.27" style="fill:#fecc00"/><polygon points="191.21 330.02 60.46 199.27 191.21 199.27 191.21 330.02" style="fill:#fecc00"/><polygon points="321.96 330.02 191.21 199.27 321.96 199.27 321.96 330.02" style="fill:#fecc00"/><polygon points="451.54 330.02 320.79 199.27 451.54 199.27 451.54 330.02" style="fill:#fecc00"/><polygon points="191.21 460.78 60.46 330.02 191.21 330.02 191.21 460.78" style="fill:#fecc00"/><polygon points="321.96 460.78 191.21 330.02 321.96 330.02 321.96 460.78" style="fill:#fecc00"/><polygon points="451.54 460.78 320.79 330.02 451.54 330.02 451.54 460.78" style="fill:#fecc00"/></svg>
