@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin.png-54d5e156d7891d9603a51f76f85b4fd9.stex"
+path="res://.import/QuestConditionsButton_Pressed.png-29062ab160fa1008facd9f6c5f12f52e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/coin.png"
-dest_files=[ "res://.import/coin.png-54d5e156d7891d9603a51f76f85b4fd9.stex" ]
+source_file="res://sprites/NovelElements/QuestConditionsButton_Pressed.png"
+dest_files=[ "res://.import/QuestConditionsButton_Pressed.png-29062ab160fa1008facd9f6c5f12f52e.stex" ]
 
 [params]
 

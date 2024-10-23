@@ -64,6 +64,7 @@ func upgrade_tier():
 	if tier < item_data.sprites.size():
 		tier += 1
 		print("{item_name}'s tier increased to {tier}".format({"item_name": name, "tier": str(tier)}))
+		GridObserver.merge_item(self)
 		refresh()
 
 

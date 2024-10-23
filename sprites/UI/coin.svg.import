@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/InventoryBackGround.png-7c8fc45e707a4dfc7657f37cc51342a2.stex"
+path="res://.import/coin.svg-b64ed0fd7949fdb2f1af8c601431529f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/InventoryBackGround.png"
-dest_files=[ "res://.import/InventoryBackGround.png-7c8fc45e707a4dfc7657f37cc51342a2.stex" ]
+source_file="res://sprites/UI/coin.svg"
+dest_files=[ "res://.import/coin.svg-b64ed0fd7949fdb2f1af8c601431529f.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

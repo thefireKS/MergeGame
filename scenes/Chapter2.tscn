@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://sprites/NovelElements/Oleg.png" type="Texture" id=1]
 [ext_resource path="res://sprites/NovelElements/SkipButton.png" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://sprites/NovelElements/CityBG.png" type="Texture" id=6]
 [ext_resource path="res://sprites/NovelElements/AssembleLine_Unlocked.png" type="Texture" id=7]
 [ext_resource path="res://sprites/NovelElements/EnigneerHouse.png" type="Texture" id=8]
-[ext_resource path="res://scenes/GameField.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/merge/GameField.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sprites/NovelElements/InteractBG.png" type="Texture" id=10]
 [ext_resource path="res://scenes/ui/OrderList.tscn" type="PackedScene" id=11]
 [ext_resource path="res://orders/order_tutotrials/order_tutorial_1.tres" type="Resource" id=12]
@@ -17,6 +17,19 @@
 [ext_resource path="res://sprites/NovelElements/QuestConditionsButton.png" type="Texture" id=15]
 [ext_resource path="res://scripts/Novel/Chapter2.gd" type="Script" id=16]
 [ext_resource path="res://sprites/NovelElements/SkipButton_Pressed.png" type="Texture" id=17]
+[ext_resource path="res://sprites/NovelElements/QuestConditionsButton_Pressed.png" type="Texture" id=18]
+[ext_resource path="res://sprites/NovelElements/QuestBG.png" type="Texture" id=19]
+[ext_resource path="res://sprites/NovelElements/FilledQuestMark.png" type="Texture" id=20]
+[ext_resource path="res://sprites/NovelElements/EndButton.png" type="Texture" id=21]
+[ext_resource path="res://sprites/NovelElements/EndButton_Pressed.png" type="Texture" id=22]
+[ext_resource path="res://sprites/NovelElements/EmptyQuestMark.png" type="Texture" id=23]
+[ext_resource path="res://scenes/ui/OrderListSmall.tscn" type="PackedScene" id=24]
+[ext_resource path="res://orders/order_tutotrials/order_tutorial_2.1.tres" type="Resource" id=25]
+[ext_resource path="res://orders/order_tutotrials/order_tutorial_2.2.tres" type="Resource" id=26]
+[ext_resource path="res://orders/order_tutotrials/order_tutorial_2.3.tres" type="Resource" id=27]
+[ext_resource path="res://sprites/NovelElements/AssembleLine_Unlocked_Final.png" type="Texture" id=28]
+[ext_resource path="res://sprites/NovelElements/QuestCompletedLogoScaled.png" type="Texture" id=29]
+[ext_resource path="res://sprites/UI/coin.svg" type="Texture" id=30]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -26,10 +39,19 @@ font_data = ExtResource( 4 )
 size = 96
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 96
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 4 )
+
 [node name="Chapter2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 16 )
+quest_done_texture = ExtResource( 20 )
 
 [node name="F1" type="Control" parent="."]
 anchor_right = 1.0
@@ -51,7 +73,7 @@ margin_right = 496.0
 margin_bottom = 209.0
 custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Теперь мне бы хотелось познакомить вас с этим гением, с человеком-чертежом. Вашему вниманию представляется Генадий!"
+text = "Теперь мне бы хотелось познакомить вас с этим гением, с человеком-чертежом. Вашему вниманию представляется Геннадий!"
 align = 1
 valign = 1
 autowrap = true
@@ -440,10 +462,10 @@ valign = 1
 autowrap = true
 
 [node name="Button" type="TextureRect" parent="F10"]
-margin_left = 80.0
-margin_top = 70.0
-margin_right = 258.0
-margin_bottom = 240.0
+margin_left = 103.0
+margin_top = 68.0
+margin_right = 281.0
+margin_bottom = 238.0
 texture = ExtResource( 15 )
 
 [node name="F11" type="Control" parent="."]
@@ -473,18 +495,198 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Button" type="Button" parent="F11"]
-margin_left = 80.0
-margin_top = 70.0
-margin_right = 258.0
-margin_bottom = 240.0
-icon = ExtResource( 15 )
-flat = true
+[node name="QuestButton" type="TextureButton" parent="F11"]
+margin_left = 103.0
+margin_top = 68.0
+margin_right = 281.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 18 )
+
+[node name="F12" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F12"]
+self_modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+
+[node name="QuestButton" type="TextureButton" parent="F12"]
+margin_left = 103.0
+margin_top = 68.0
+margin_right = 281.0
+margin_bottom = 238.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 18 )
+
+[node name="OrderListSmall1" parent="F12" instance=ExtResource( 24 )]
+margin_left = 295.0
+margin_top = 136.0
+margin_right = 846.0
+margin_bottom = 393.0
+order_datapack = ExtResource( 27 )
+
+[node name="OrderListSmall2" parent="F12" instance=ExtResource( 24 )]
+margin_left = 295.0
+margin_top = 423.0
+margin_right = 846.0
+margin_bottom = 680.0
+order_datapack = ExtResource( 26 )
+
+[node name="OrderListSmall3" parent="F12" instance=ExtResource( 24 )]
+margin_left = 295.0
+margin_top = 710.0
+margin_right = 846.0
+margin_bottom = 967.0
+order_datapack = ExtResource( 25 )
+
+[node name="F13" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="TextureRect" parent="F13"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+
+[node name="EngineerHouse" type="TextureRect" parent="F13"]
+margin_left = 648.0
+margin_top = 93.0
+margin_right = 876.0
+margin_bottom = 399.0
+texture = ExtResource( 13 )
+
+[node name="AssembleLine" type="TextureRect" parent="F13"]
+margin_left = 933.0
+margin_top = 153.0
+margin_right = 1280.0
+margin_bottom = 395.0
+texture = ExtResource( 28 )
+
+[node name="Coin" type="TextureRect" parent="F13"]
+margin_left = 1062.0
+margin_top = 585.0
+margin_right = 1308.0
+margin_bottom = 831.0
+texture = ExtResource( 30 )
+expand = true
+
+[node name="CoinAmount" type="Label" parent="F13"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 319.0
+margin_top = 98.0
+margin_right = 582.0
+margin_bottom = 245.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "30"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Quest" type="TextureRect" parent="F13"]
+margin_left = 469.0
+margin_top = 474.0
+margin_right = 964.0
+margin_bottom = 953.0
+texture = ExtResource( 29 )
 
 [node name="GameField" parent="." instance=ExtResource( 9 )]
 visible = false
 margin_top = -461.0
 margin_bottom = 489.0
+
+[node name="FQuest" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="FQuest"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 19 )
+
+[node name="ChapterName" type="Label" parent="FQuest"]
+margin_left = 743.0
+margin_top = 229.0
+margin_right = 1177.0
+margin_bottom = 376.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Глава 2"
+align = 1
+valign = 1
+
+[node name="QuestList" type="VBoxContainer" parent="FQuest"]
+margin_left = 473.0
+margin_top = 403.0
+margin_right = 1361.0
+margin_bottom = 703.0
+custom_constants/separation = 165
+
+[node name="Quest1" type="Control" parent="FQuest/QuestList"]
+margin_right = 888.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FQuest/QuestList/Quest1"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 35
+
+[node name="QuestStatus" type="TextureRect" parent="FQuest/QuestList/Quest1/HBoxContainer"]
+margin_right = 116.0
+margin_bottom = 103.0
+texture = ExtResource( 23 )
+
+[node name="QuestName" type="Label" parent="FQuest/QuestList/Quest1/HBoxContainer"]
+margin_left = 151.0
+margin_top = 23.0
+margin_right = 617.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Соедини 25 предметов "
+align = 1
+valign = 1
+
+[node name="Quest2" type="Control" parent="FQuest/QuestList"]
+margin_top = 165.0
+margin_right = 888.0
+margin_bottom = 165.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FQuest/QuestList/Quest2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 35
+
+[node name="QuestStatus" type="TextureRect" parent="FQuest/QuestList/Quest2/HBoxContainer"]
+margin_right = 116.0
+margin_bottom = 103.0
+texture = ExtResource( 23 )
+
+[node name="QuestName" type="Label" parent="FQuest/QuestList/Quest2/HBoxContainer"]
+margin_left = 151.0
+margin_top = 23.0
+margin_right = 553.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0, 0.345098, 0.415686, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Выполни 10 заказов"
+align = 1
+valign = 1
+
+[node name="EndButton" type="TextureButton" parent="FQuest"]
+margin_left = 937.0
+margin_top = 755.0
+margin_right = 1321.0
+margin_bottom = 854.0
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
 
 [connection signal="pressed" from="F1/SkipButton" to="." method="_on_SkipButtonF1F2F3_pressed"]
 [connection signal="pressed" from="F1/NextButton" to="." method="_on_NextButtonF1_pressed"]
@@ -494,3 +696,9 @@ margin_bottom = 489.0
 [connection signal="pressed" from="F3/NextButton" to="." method="_on_NextButtonF3_pressed"]
 [connection signal="pressed" from="F4/NextButton" to="." method="_on_NextButtonF4_pressed"]
 [connection signal="visibility_changed" from="F6" to="." method="_on_F6_visibility_changed"]
+[connection signal="pressed" from="F8/SkipButton" to="." method="_on_NextButtonF8_pressed"]
+[connection signal="pressed" from="F8/NextButton" to="." method="_on_NextButtonF8_pressed"]
+[connection signal="pressed" from="F9/NextButton" to="." method="_on_NextButtonF9_pressed"]
+[connection signal="pressed" from="F11/QuestButton" to="." method="_on_QuestButtonF11_pressed"]
+[connection signal="pressed" from="F12/QuestButton" to="." method="_on_QuestButtonF12_pressed"]
+[connection signal="pressed" from="FQuest/EndButton" to="." method="_on_EndButtonFQ_pressed"]

@@ -2,6 +2,7 @@ extends Node
 
 signal send_item (item)
 signal item_was_merged
+signal order_completed
 #signal check_order (item, tier)
 
 var items_on_grid = []
@@ -10,9 +11,11 @@ func send_item_to_grid(item: Resource):
 	emit_signal("send_item", item)
 
 func send_item_to_observer(item_scene: Item):
-	emit_signal("item_was_merged")
 	items_on_grid.push_back(item_scene)
 	items_on_grid = make_array_unique(items_on_grid)
+
+func merge_item(item_scene: Item):
+	emit_signal("item_was_merged")
 
 func remove_item_from_observer(item_scene: Item):
 	items_on_grid.erase(item_scene)
@@ -35,10 +38,10 @@ func check_order(order_scene: OrderList, order_data: OrderData):
 				break
 	
 	if temp_order_data.empty():
-		print("Empty, deleting everything")
 		for item in items_to_delete:
 			items_on_grid.erase(item)
 			item.reset(item.get_parent())
+		emit_signal("order_completed")
 		order_scene.complete_order()
 	else:
 		print("Unlucky :(")

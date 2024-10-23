@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ui/OrderList.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/OrderIconSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/NovelElements/OrderArrowsSmall.png" type="Texture" id=3]
+
+[node name="OrderListSmall" instance=ExtResource( 1 )]
+margin_right = 409.0
+margin_bottom = 257.0
+rect_min_size = Vector2( 409, 257 )
+patch_margin_left = 81
+patch_margin_top = 83
+patch_margin_right = 86
+patch_margin_bottom = 80
+order_icon = ExtResource( 2 )
+x_size = [ 409, 472, 551 ]
+
+[node name="OrderPersona" parent="." index="0"]
+margin_left = 65.0
+margin_top = 38.0
+margin_right = 180.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 116, 116 )
+expand = true
+stretch_mode = 1
+
+[node name="ArrowsIcon" parent="." index="1"]
+margin_left = 209.0
+margin_top = 45.0
+margin_right = 299.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 90, 99 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="Items" parent="." index="2"]
+margin_left = 309.0
+margin_top = 35.0
+margin_right = 509.0
+margin_bottom = 94.0
+custom_constants/hseparation = 9
+
+[node name="Rewards" parent="." index="3"]
+margin_left = 309.0
+margin_top = 96.0
+margin_right = 509.0
+margin_bottom = 155.0
+custom_constants/hseparation = 9
+
+[node name="Button" parent="." index="4"]
+margin_left = 35.0
+margin_top = 170.0
+margin_right = 211.0
+margin_bottom = 226.0
+expand = true

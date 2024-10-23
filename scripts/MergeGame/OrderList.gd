@@ -3,10 +3,14 @@ class_name OrderList
 
 export var order_datapack : Resource
 export var order_icon : PackedScene
+export var coin_texture : Texture
+export var x_size : Array
 #onready var slots_grid = $"%GridContainer"
-onready var icons = $OrderItems
+onready var item_icons = $Items
+onready var reward_icons = $Rewards
 
 var order : OrderData
+
 #var listed_order_array = []
 
 func _ready():
@@ -16,24 +20,36 @@ func _ready():
 func read_order_data():
 	order = OrderData.new()
 	order.generate(order_datapack)
+	
 	for order_element in order.data:
 		var ord_ico = order_icon.instance()
-		icons.add_child(ord_ico)
+		item_icons.add_child(ord_ico)
 		ord_ico.set_order_icon(order_element.item_data.get_sprite(order_element.tier))
+	
+	if order.coins_amount > 0:
+		var coin_ico = order_icon.instance()
+		reward_icons.add_child(coin_ico)
+		coin_ico.set_order_icon(coin_texture)
+	
+	if order.reward_data.size() > 0:
+		for reward in order.reward_data:
+			var rwd_ico = order_icon.instance()
+			reward_icons.add_child(rwd_ico)
+			#rwd_ico.set_order_icon(reward)
+	
 	set_order_list_size()
 
 func set_order_list_size():
-	var numberof_items = order.data.size()
+	var numberof_items = max(order.data.size(),order.reward_data.size())
 	match numberof_items:
 		1:
-			rect_size.x = 715
+			rect_size.x = x_size[0]
 		2:
-			rect_size.x = 904
+			rect_size.x = x_size[1]
 		3:
-			rect_size.x = 1032
+			rect_size.x = x_size[2]
 		_:
-			rect_size.x = 715
-	print(rect_size.x)
+			rect_size.x = x_size[0]
 #func update_order_state(item_res: Resource, tier: int, scene: Item):
 #	for order in listed_order_array:
 #		if order.item_scene != scene:

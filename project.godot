@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "TextureRect",
 "class": "Item",
 "language": "GDScript",
-"path": "res://scripts/Item.gd"
+"path": "res://scripts/MergeGame/Item.gd"
 }, {
 "base": "Control",
 "class": "MergeField",
@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "OrderList",
 "language": "GDScript",
-"path": "res://scripts/OrderList.gd"
+"path": "res://scripts/MergeGame/OrderList.gd"
 }, {
 "base": "Reference",
 "class": "OrderObject",
@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Panel",
 "class": "Slot",
 "language": "GDScript",
-"path": "res://scripts/Slot.gd"
+"path": "res://scripts/MergeGame/Slot.gd"
 }, {
 "base": "Node",
 "class": "Utils",
