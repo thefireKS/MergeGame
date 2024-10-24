@@ -11,6 +11,8 @@ var merged_items_amount : int = 0 #25 to complete
 var completed_orders_amount : int = 0 #10 to complete
 
 func _ready():
+	GridObserver.reload_level()
+	
 	GridObserver.connect("item_was_merged",self,"F5_item_merged")
 	GridObserver.connect("item_was_merged",self,"_on_item_merge")
 	
@@ -22,13 +24,19 @@ func _ready():
 #F1 & F2 & F3 SKIP button
 func _on_SkipButtonF1F2F3_pressed():
 	$F4.visible = true
+	$RobotSound.play()
 	$F1.visible = false
 	$F2.visible = false
 	$F3.visible = false
 
+func _on_F1_visibility_changed():
+	if $F1.is_visible_in_tree():
+		$RobotSound.play()
+
 #F1 NEXT button
 func _on_NextButtonF1_pressed():
 	$F2.visible = true
+	$RobotSound.stop()
 	$F1.visible = false
 
 #F2 NEXT button
@@ -39,6 +47,7 @@ func _on_NextButtonF2_pressed():
 #F3 NEXT button
 func _on_NextButtonF3_pressed():
 	$F4.visible = true
+	$RobotSound.play()
 	$F3.visible = false
 
 #F4 NEXT button
@@ -46,6 +55,7 @@ func _on_NextButtonF4_pressed():
 	gf.visible = true
 	gf.load_custom_field({"Slot 8":{"res://items/wood.tres":1}, "Slot 12":{"res://items/wood.tres":1}})
 	$F5.visible = true
+	$RobotSound.stop()
 	$F4.visible = false
 
 func F5_item_merged():
@@ -87,11 +97,14 @@ func F7_order_completed():
 
 func _on_F7_timer_timeout():
 	$F8.visible = true
+	$RobotSound.play()
 	gf.visible = false
 	$F7.visible = false
 
 func _on_NextButtonF8_pressed():
 	$F9.visible = true
+	$RobotSound.stop()
+	$RobotSound.play()
 	$F8.visible = false
 
 func _on_NextButtonF9_pressed():
@@ -99,6 +112,7 @@ func _on_NextButtonF9_pressed():
 	gf.visible = true
 	gf.rect_position = Vector2(483,79)
 	gf.load_custom_field({"Slot 13":{"res://items/generator_wood_pencilpack.tres":1}})
+	$RobotSound.stop()
 	$F9.visible = false
 
 func F10_check_spawned_items_amount(item: Resource):
@@ -123,6 +137,7 @@ func _on_EndButtonFQ_pressed():
 		$FQuest.visible = false
 		return
 	$F13.visible = true
+	$F13/AudioStreamPlayer.play()
 	$GameField.visible = false
 	$FQuest.visible = false
 
@@ -142,3 +157,4 @@ func _on_order_complete():
 
 func _on_NextButtonF13_pressed():
 	get_tree().change_scene("res://scenes/Chapter3.tscn")
+

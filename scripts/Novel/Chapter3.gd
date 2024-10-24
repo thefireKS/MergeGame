@@ -6,21 +6,32 @@ onready var coins_amount = $F13/CoinsAmount
 var rare_order_completed : bool = false
 
 func _ready():
+	GridObserver.reload_level()
+	PlayerParametersObserver.coins = 0
+	$AnimationPlayer.play("RESET")
+	
 	PlayerParametersObserver.connect("coins_updated",self,"update_coins_text")
 	$F13/OrderListSmall1.connect("order_completed",self,"_on_order_complete")
 	$F13/OrderListSmall2.connect("order_completed",self,"_on_order_complete")
 	$F13/OrderListSmall3.connect("order_completed",self,"_on_order_complete")
  
+func _on_F1_visibility_changed():
+	if $F1.is_visible_in_tree():
+		$RobotSound.play()
+
 func _on_NextButtonF1_pressed():
 	$F2.visible = true
+	$RobotSound.stop()
 	$F1.visible = false
 
 func _on_NextButtonF2_pressed():
 	$F3.visible = true
+	$RobotSound.play()
 	$F2.visible = false
 
 func _on_NextButtonF3_pressed():
 	$F4.visible = true
+	$RobotSound.stop()
 	$F3.visible = false
 
 func _on_NextButtonF4_pressed():
@@ -29,6 +40,7 @@ func _on_NextButtonF4_pressed():
 
 func _on_SkipButtonF1F2F3F4_pressed():
 	$F5.visible = true
+	$RobotSound.stop()
 	$F4.visible = false
 	$F3.visible = false
 	$F2.visible = false
@@ -40,14 +52,17 @@ func _on_NextButtonF5_pressed():
 
 func _on_BuyButtonF6_pressed():
 	$F7.visible = true
+	$RobotSound.play()
 	$F6.visible = false
 
 func _on_NextButtonF7_pressed():
 	$F8.visible = true
+	$RobotSound.stop()
 	$F7.visible = false
 
 func _on_SkipButtonF7_pressed():
 	$F8.visible = true
+	$RobotSound.stop()
 	$F7.visible = false
 
 func _on_NextButtonF8_pressed():
@@ -98,8 +113,13 @@ func _on_NextButtonF15_pressed():
 
 func _on_F15_animation_end():
 	$F15.visible = false
+	$RobotSound.play()
 	$F16.visible = true
 
 func _on_NextButtonF16_pressed():
 	$F16.visible = false
+	$RobotSound.stop()
+	$F17/AudioStreamPlayer.play()
 	$F17.visible = true
+
+

@@ -94,6 +94,7 @@ config/icon="res://icon.png"
 
 GridObserver="*res://scripts/GridObserver.gd"
 PlayerParametersObserver="*res://scripts/PlayerParametersObserver.gd"
+MainMusicPlayer="*res://scripts/MainMusicPlayer.gd"
 
 [display]
 
