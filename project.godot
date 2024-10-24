@@ -94,7 +94,10 @@ config/icon="res://icon.png"
 
 PlayerParametersObserver="*res://scripts/PlayerParametersObserver.gd"
 MainMusicPlayer="*res://scripts/MainMusicPlayer.gd"
-HudConnector="*res://scripts/HUD Connector.gd"
+G="*res://ar-engine-sdk/global.gd"
+WS="*res://ar-engine-sdk/websocket.gd"
+IC="*res://ar-engine-sdk/input_controller.gd"
+GridObserver="*res://scripts/GridObserver.gd"
 
 [display]
 

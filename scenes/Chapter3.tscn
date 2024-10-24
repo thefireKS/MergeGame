@@ -290,7 +290,9 @@ anims/CarRoom_Move = SubResource( 6 )
 anims/Car_Move = SubResource( 8 )
 anims/RESET = SubResource( 7 )
 
-[node name="HUD Connector" type="Node" parent="."]
+[node name="HUD Connector" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 39 )
 
 [node name="RobotSound" type="AudioStreamPlayer" parent="."]
@@ -794,24 +796,24 @@ margin_top = 136.0
 margin_right = 846.0
 margin_bottom = 393.0
 texture = ExtResource( 29 )
-order_datapack = ExtResource( 20 )
 coin_texture = ExtResource( 28 )
+order_datapack = ExtResource( 20 )
 
 [node name="OrderListSmall2" parent="F13" instance=ExtResource( 24 )]
 margin_left = 295.0
 margin_top = 423.0
 margin_right = 846.0
 margin_bottom = 680.0
-order_datapack = ExtResource( 22 )
 coin_texture = ExtResource( 28 )
+order_datapack = ExtResource( 22 )
 
 [node name="OrderListSmall3" parent="F13" instance=ExtResource( 24 )]
 margin_left = 295.0
 margin_top = 710.0
 margin_right = 846.0
 margin_bottom = 967.0
-order_datapack = ExtResource( 21 )
 coin_texture = ExtResource( 28 )
+order_datapack = ExtResource( 21 )
 
 [node name="F14" type="Control" parent="."]
 visible = false

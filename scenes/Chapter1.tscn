@@ -39,6 +39,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 12 )
 
+[node name="HUD Connector" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 17 )
+
 [node name="RobotSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = -20.0
@@ -326,9 +331,6 @@ texture_pressed = ExtResource( 14 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="F6"]
 stream = ExtResource( 15 )
 volume_db = -20.0
-
-[node name="HUD Connector" type="Node" parent="."]
-script = ExtResource( 17 )
 
 [connection signal="pressed" from="F1/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="F2/SkipButton" to="." method="_on_SkipButton_pressed"]

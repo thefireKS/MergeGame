@@ -57,6 +57,11 @@ anchor_bottom = 1.0
 script = ExtResource( 16 )
 quest_done_texture = ExtResource( 20 )
 
+[node name="HUD Connector" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 34 )
+
 [node name="RobotSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 32 )
 volume_db = -20.0
@@ -535,24 +540,24 @@ margin_left = 295.0
 margin_top = 136.0
 margin_right = 846.0
 margin_bottom = 393.0
-order_datapack = ExtResource( 27 )
 coin_texture = ExtResource( 31 )
+order_datapack = ExtResource( 27 )
 
 [node name="OrderListSmall2" parent="F12" instance=ExtResource( 24 )]
 margin_left = 295.0
 margin_top = 423.0
 margin_right = 846.0
 margin_bottom = 680.0
-order_datapack = ExtResource( 26 )
 coin_texture = ExtResource( 31 )
+order_datapack = ExtResource( 26 )
 
 [node name="OrderListSmall3" parent="F12" instance=ExtResource( 24 )]
 margin_left = 295.0
 margin_top = 710.0
 margin_right = 846.0
 margin_bottom = 967.0
-order_datapack = ExtResource( 25 )
 coin_texture = ExtResource( 31 )
+order_datapack = ExtResource( 25 )
 
 [node name="F13" type="Control" parent="."]
 visible = false
@@ -707,9 +712,6 @@ margin_right = 1321.0
 margin_bottom = 854.0
 texture_normal = ExtResource( 21 )
 texture_pressed = ExtResource( 22 )
-
-[node name="HUD Connector" type="Node" parent="."]
-script = ExtResource( 34 )
 
 [connection signal="visibility_changed" from="F1" to="." method="_on_F1_visibility_changed"]
 [connection signal="pressed" from="F1/SkipButton" to="." method="_on_SkipButtonF1F2F3_pressed"]

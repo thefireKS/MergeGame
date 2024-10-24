@@ -1,8 +1,10 @@
 extends Control
-
+onready var hud = $"HUD Connector"
 #F1 button
 func _on_StartButton_pressed():
 	$F2.visible = true
+	hud.Frame(2)
+	print("time to frame 2")
 	$RobotSound.play()
 	$F1.visible = false
 
