@@ -33,3 +33,9 @@ class HUD extends Application:
 				"type" : "active",
 				"index": houseIndex
 				})
+
+	func frame(frame: int):
+		api('send_to_hud_app', {
+			"type" : "frame",
+			"frame": frame
+		})

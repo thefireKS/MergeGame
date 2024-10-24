@@ -87,14 +87,14 @@ _global_script_class_icons={
 [application]
 
 config/name="MergeGame"
-run/main_scene="res://scenes/MergeGameField.tscn"
+run/main_scene="res://scenes/Chapter1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-GridObserver="*res://scripts/GridObserver.gd"
 PlayerParametersObserver="*res://scripts/PlayerParametersObserver.gd"
 MainMusicPlayer="*res://scripts/MainMusicPlayer.gd"
+HudConnector="*res://scripts/HUD Connector.gd"
 
 [display]
 
