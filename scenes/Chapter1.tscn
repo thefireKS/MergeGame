@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://sprites/NovelElements/Artyom.png" type="Texture" id=1]
 [ext_resource path="res://sprites/NovelElements/CityBG.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://sprites/NovelElements/EndButton_Pressed.png" type="Texture" id=14]
 [ext_resource path="res://sfx/completed.wav" type="AudioStream" id=15]
 [ext_resource path="res://sfx/robot_sound.wav" type="AudioStream" id=16]
-[ext_resource path="res://scripts/HUD Connector.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 96
@@ -39,17 +38,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 12 )
 
-[node name="HUD Connector" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 17 )
-
 [node name="RobotSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = -20.0
 
 [node name="F1" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -123,6 +116,7 @@ anchor_bottom = 1.0
 margin_top = -0.0800171
 
 [node name="F3" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 

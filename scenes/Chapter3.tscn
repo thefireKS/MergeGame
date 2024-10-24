@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://sprites/NovelElements/Artyom.png" type="Texture" id=1]
 [ext_resource path="res://sprites/NovelElements/SkipButton.png" type="Texture" id=2]
@@ -38,7 +38,6 @@
 [ext_resource path="res://sprites/NovelElements/LazyFrames/C3F17.png" type="Texture" id=36]
 [ext_resource path="res://sfx/robot_sound.wav" type="AudioStream" id=37]
 [ext_resource path="res://sfx/completed.wav" type="AudioStream" id=38]
-[ext_resource path="res://scripts/HUD Connector.gd" type="Script" id=39]
 
 [sub_resource type="Animation" id=6]
 resource_name = "CarRoom_Move"
@@ -289,11 +288,6 @@ root_node = NodePath("../F9")
 anims/CarRoom_Move = SubResource( 6 )
 anims/Car_Move = SubResource( 8 )
 anims/RESET = SubResource( 7 )
-
-[node name="HUD Connector" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 39 )
 
 [node name="RobotSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 37 )

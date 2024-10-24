@@ -24,6 +24,7 @@ func _ready():
 #F1 & F2 & F3 SKIP button
 func _on_SkipButtonF1F2F3_pressed():
 	$F4.visible = true
+	HudConnector.Frame(2,4)
 	$RobotSound.play()
 	$F1.visible = false
 	$F2.visible = false
@@ -36,17 +37,20 @@ func _on_F1_visibility_changed():
 #F1 NEXT button
 func _on_NextButtonF1_pressed():
 	$F2.visible = true
+	HudConnector.Frame(2,2)
 	$RobotSound.stop()
 	$F1.visible = false
 
 #F2 NEXT button
 func _on_NextButtonF2_pressed():
 	$F3.visible = true
+	HudConnector.Frame(2,3)
 	$F2.visible = false
 
 #F3 NEXT button
 func _on_NextButtonF3_pressed():
 	$F4.visible = true
+	HudConnector.Frame(2,4)
 	$RobotSound.play()
 	$F3.visible = false
 
@@ -55,12 +59,14 @@ func _on_NextButtonF4_pressed():
 	gf.visible = true
 	gf.load_custom_field({"Slot 8":{"res://items/wood.tres":1}, "Slot 12":{"res://items/wood.tres":1}})
 	$F5.visible = true
+	HudConnector.Frame(2,5)
 	$RobotSound.stop()
 	$F4.visible = false
 
 func F5_item_merged():
 	if !fifth_was_completed && $F5.is_visible_in_tree():
 		$F6.visible = true
+		HudConnector.Frame(2,6)
 		$F5.visible = false
 		fifth_was_completed = true
 
@@ -83,6 +89,7 @@ func _on_F6_visibility_changed():
 
 func _on_F6_timer_timeout():
 	$F7.visible = true
+	HudConnector.Frame(2,7)
 	$F6.visible = false
 
 func F7_order_completed():
@@ -97,18 +104,21 @@ func F7_order_completed():
 
 func _on_F7_timer_timeout():
 	$F8.visible = true
+	HudConnector.Frame(2,8)
 	$RobotSound.play()
 	gf.visible = false
 	$F7.visible = false
 
 func _on_NextButtonF8_pressed():
 	$F9.visible = true
+	HudConnector.Frame(2,9)
 	$RobotSound.stop()
 	$RobotSound.play()
 	$F8.visible = false
 
 func _on_NextButtonF9_pressed():
 	$F10.visible = true
+	HudConnector.Frame(2,10)
 	gf.visible = true
 	gf.rect_position = Vector2(483,79)
 	gf.load_custom_field({"Slot 13":{"res://items/generator_wood_pencilpack.tres":1}})
@@ -121,12 +131,14 @@ func F10_check_spawned_items_amount(item: Resource):
 	F10_spawned_items_amount += 1
 	if F10_spawned_items_amount >= 2:
 		$F11.visible = true
+		HudConnector.Frame(2,11)
 		$F10.visible = false
 
 func _on_QuestButtonF11_pressed():
 	gf.rect_position = Vector2(901, 79)
 	$FQuest.visible = true
 	$F12.visible = true
+	HudConnector.Frame(2,12)
 	$F11.visible = false
 
 func _on_QuestButtonF12_pressed():
@@ -137,6 +149,7 @@ func _on_EndButtonFQ_pressed():
 		$FQuest.visible = false
 		return
 	$F13.visible = true
+	HudConnector.Frame(2,13)
 	$F13/AudioStreamPlayer.play()
 	$GameField.visible = false
 	$FQuest.visible = false
