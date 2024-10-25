@@ -53,3 +53,4 @@ func _on_NextButtonF5_pressed():
 #End button
 func _on_EndButton_pressed():
 	get_tree().change_scene("res://scenes/Chapter2.tscn")
+	HudConnector.Frame(1,7)

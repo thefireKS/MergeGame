@@ -10,6 +10,8 @@ var F10_spawned_items_amount : int = 0
 var merged_items_amount : int = 0 #25 to complete
 var completed_orders_amount : int = 0 #10 to complete
 
+var debug_skip_merge = false
+
 func _ready():
 	GridObserver.reload_level()
 	
@@ -145,6 +147,14 @@ func _on_QuestButtonF12_pressed():
 	$FQuest.visible = true
 
 func _on_EndButtonFQ_pressed():
+
+	if debug_skip_merge:
+		$F13.visible = true
+		HudConnector.Frame(2,13)
+		$F13/AudioStreamPlayer.play()
+		$GameField.visible = false
+		$FQuest.visible = false
+
 	if merged_items_amount < 25 || completed_orders_amount < 10:
 		$FQuest.visible = false
 		return
@@ -170,4 +180,8 @@ func _on_order_complete():
 
 func _on_NextButtonF13_pressed():
 	get_tree().change_scene("res://scenes/Chapter3.tscn")
+	HudConnector.Frame(2,14)
 
+func _input(event):
+	if event.is_action_pressed("Skip merge"):
+		debug_skip_merge = true
